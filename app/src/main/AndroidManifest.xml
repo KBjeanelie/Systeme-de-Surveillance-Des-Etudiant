@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemeDeSurveillance">
         <activity
-            android:name=".Authentification.SignUpActivity"
-            android:exported="false" />
-        <activity
             android:name=".Authentification.LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
