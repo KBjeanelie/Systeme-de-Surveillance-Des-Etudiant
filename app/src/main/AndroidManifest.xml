@@ -10,9 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemeDeSurveillance">
         <activity
+            android:name=".Administrateur.AddTeacher"
+            android:exported="false" />
+        <activity
+            android:name=".Administrateur.DisplayTeachers"
+            android:exported="false" />
+        <activity
+            android:name=".Administrateur.AddSchool"
+            android:exported="false" />
+        <activity
+            android:name=".Administrateur.AddStudent"
+            android:exported="false" />
+        <activity
             android:name=".Authentification.LoginActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
