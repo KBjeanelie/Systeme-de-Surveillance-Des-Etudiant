@@ -12,5 +12,7 @@
     <color name="secondary_color">#14629b</color>
     <color name="gray_app">#747474</color>
     <color name="bg_color_app">#f7f7f7</color>
+    <color name="inputTextHintColor">#0277BD</color>
+    <color name="red_app">#ff0000</color>
 
 </resources>

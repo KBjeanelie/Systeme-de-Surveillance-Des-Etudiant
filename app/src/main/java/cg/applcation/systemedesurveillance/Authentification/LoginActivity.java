@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import cg.applcation.systemedesurveillance.Administrateur.AddStudent;
+
+import cg.applcation.systemedesurveillance.Administrateur.AddUserAccount;
+import cg.applcation.systemedesurveillance.Enseignant.DisplayStudentsAttendance;
 import cg.applcation.systemedesurveillance.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -19,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.login_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, AddStudent.class);
+                Intent intent = new Intent(LoginActivity.this, DisplayStudentsAttendance.class);
                 startActivity(intent);
                 finish();
             }

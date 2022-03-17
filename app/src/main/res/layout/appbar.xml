@@ -8,18 +8,19 @@
 
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/icon_back"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:srcCompat="@drawable/ic_back"
         app:tint="@color/white" />
 
     <TextView
+        android:id="@+id/app_bar_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ajouter un Etudiant"
         android:fontFamily="sans-serif-medium"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="@color/white"
         android:textAlignment="center"/>
 </LinearLayout>
