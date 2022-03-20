@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemeDeSurveillance">
         <activity
+            android:name=".Enseignant.TeacherDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Enseignant.AddStudentAttendance"
+            android:exported="false" />
+        <activity
             android:name=".Enseignant.DisplayStudentsAttendance"
             android:exported="false" />
         <activity
