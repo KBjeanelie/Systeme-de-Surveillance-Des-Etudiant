@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import cg.applcation.systemedesurveillance.Authentification.LoginActivity;
+import cg.applcation.systemedesurveillance.MainActivity;
 import cg.applcation.systemedesurveillance.R;
 
 public class AddStudent extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class AddStudent extends AppCompatActivity {
         ic_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddStudent.this, LoginActivity.class);
+                Intent intent = new Intent(AddStudent.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

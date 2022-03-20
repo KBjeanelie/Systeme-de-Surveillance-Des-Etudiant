@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import cg.applcation.systemedesurveillance.Authentification.LoginActivity;
+import cg.applcation.systemedesurveillance.MainActivity;
 import cg.applcation.systemedesurveillance.R;
 
 public class DisplayTeachers extends AppCompatActivity {
@@ -29,7 +30,7 @@ public class DisplayTeachers extends AppCompatActivity {
         ic_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DisplayTeachers.this, LoginActivity.class);
+                Intent intent = new Intent(DisplayTeachers.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
