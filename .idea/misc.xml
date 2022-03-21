@@ -12,6 +12,8 @@
         <entry key="app/src/main/res/drawable/bg_input.xml" value="0.171" />
         <entry key="app/src/main/res/drawable/box_shadow.xml" value="0.1355" />
         <entry key="app/src/main/res/drawable/ic_add_present.xml" value="0.171" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.167" />
+        <entry key="app/src/main/res/drawable/ic_list.xml" value="0.167" />
         <entry key="app/src/main/res/layout-v23/activity_login.xml" value="0.14447463768115942" />
         <entry key="app/src/main/res/layout/activity_add_student.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_add_student_attendance.xml" value="0.25" />
@@ -23,8 +25,9 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_teacher_dashboard.xml" value="0.12511332728921123" />
+        <entry key="app/src/main/res/layout/activity_teacher_dashboard.xml" value="0.2" />
         <entry key="app/src/main/res/layout/appbar.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/appbar_dash.xml" value="0.25" />
         <entry key="app/src/main/res/layout/button_app.xml" value="0.25" />
         <entry key="app/src/main/res/layout/student_attendance_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/teacher_card_item.xml" value="0.25" />
@@ -36,5 +39,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -18,31 +18,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddTeacher.class));
-            }
-        });
-
-        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.card_add_student).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, AddStudent.class));
+                finish();
             }
         });
 
-        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.card_add_teacher).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AddTeacher.class));
+                finish();
+            }
+        });
+
+        findViewById(R.id.card_add_account).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, AddUserAccount.class));
+                finish();
             }
         });
 
-        findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.card_display_teachers).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, DisplayTeachers.class));
+                finish();
             }
         });
     }

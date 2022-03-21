@@ -28,9 +28,6 @@
             android:name=".Administrateur.DisplayTeachers"
             android:exported="false" />
         <activity
-            android:name=".Administrateur.AddSchool"
-            android:exported="false" />
-        <activity
             android:name=".Administrateur.AddStudent"
             android:exported="false" />
         <activity
