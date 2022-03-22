@@ -44,7 +44,7 @@
         android:drawableStart="@drawable/ic_person"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Email ou tel"
         android:inputType="textEmailAddress"
         android:padding="15dp"
         android:textColorHint="@color/gray_app"
@@ -62,7 +62,7 @@
         android:drawableStart="@drawable/ic_passwd"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Mot de passe"
         android:inputType="textPassword"
         android:padding="15dp"
         android:textColorHint="@color/gray_app"
@@ -71,17 +71,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_username_login" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="forget password"
-        android:textColor="@color/primary_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.853"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_passwd_login" />
 
     <Button
         android:id="@+id/login_btn"

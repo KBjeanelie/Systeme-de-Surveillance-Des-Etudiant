@@ -1,6 +1,6 @@
 package cg.applcation.systemedesurveillance.models;
 
-public class teacher {
+public class Teacher {
 
     private String lastname;
     private String firstname;
@@ -14,7 +14,7 @@ public class teacher {
     private String sex;
     private String created_at;
 
-    public teacher(String lastname, String firstname, String email, String job_function, String work_at, String tel, String address, String teach_in, String subject, String sex, String created_at) {
+    public Teacher(String lastname, String firstname, String email, String job_function, String work_at, String tel, String address, String teach_in, String subject, String sex, String created_at) {
         this.lastname = lastname;
         this.firstname = firstname;
         this.email = email;

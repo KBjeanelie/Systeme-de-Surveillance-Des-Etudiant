@@ -27,7 +27,7 @@
 
             <!-- email field -->
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/teacher_email"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="15dp"

@@ -76,6 +76,40 @@
                 android:autofillHints="emailAddress"
                 android:textColorHint="@color/inputTextHintColor" />
 
+            <!-- job function field -->
+            <EditText
+                android:id="@+id/job_function"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_input"
+                android:drawableStart="@drawable/ic_function"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Profession"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:autofillHints="emailAddress"
+                android:textColorHint="@color/inputTextHintColor" />
+
+            <!-- job function field -->
+            <EditText
+                android:id="@+id/work_at"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_input"
+                android:drawableStart="@drawable/ic_work"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Lieux de Travail"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:autofillHints="emailAddress"
+                android:textColorHint="@color/inputTextHintColor" />
+
             <!-- phone number field -->
             <EditText
                 android:id="@+id/phone_number"

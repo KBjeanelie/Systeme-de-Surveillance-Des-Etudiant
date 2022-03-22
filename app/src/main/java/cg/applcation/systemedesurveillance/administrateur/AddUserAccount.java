@@ -5,14 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import cg.applcation.systemedesurveillance.MainActivity;
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.models.UserAccount;
 
 public class AddUserAccount extends AppCompatActivity {
 
+    EditText email, teacher_tel, password;
     ImageView ic_back;
     TextView app_bar_title;
 
@@ -32,6 +36,31 @@ public class AddUserAccount extends AppCompatActivity {
                 Intent intent = new Intent(AddUserAccount.this, MainActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        email = findViewById(R.id.teacher_email);
+        teacher_tel = findViewById(R.id.phone_number);
+        password = findViewById(R.id.input_passwd);
+
+
+        findViewById(R.id.btn_add).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = AddUserAccount.this.email.getText().toString().trim();
+                String tel = AddUserAccount.this.teacher_tel.getText().toString().trim();
+                String password = AddUserAccount.this.password.getText().toString().trim();
+
+                if(email.matches("")){
+                    Toast.makeText(getApplicationContext(), "Vous n'avez pas entré un email", Toast.LENGTH_LONG).show();
+                }else if(tel.matches("")){
+                    Toast.makeText(getApplicationContext(), "Vous n'avez pas entré un numero de telephone", Toast.LENGTH_LONG).show();
+                }else if(password.matches("")){
+                    Toast.makeText(getApplicationContext(), "Vous n'avez pas entré un mot de passe", Toast.LENGTH_LONG).show();
+                }else {
+                    UserAccount userAccount = new UserAccount(email, tel, password);
+                    Toast.makeText(getApplicationContext(), "No database found :(", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

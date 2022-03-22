@@ -10,6 +10,13 @@ import cg.applcation.systemedesurveillance.authentification.LoginActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
+    /**  THIS IS THE DEFAULT ADMIN INFORMATION FOR LOG INTO APP  */
+    public static String ADMIN_USERNAME = "admin";
+    public static String ADMIN_PASSWORD = "admin";
+
+    /**  THIS IS THE DEFAULT USER OR TEACHER ACCOUNT INFORMATION FOR LOG INTO APP  */
+    public static String USERNAME = "username";
+    public static String PASSWORD = "password";
 
 
     @Override

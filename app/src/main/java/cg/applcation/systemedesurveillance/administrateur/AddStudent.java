@@ -1,6 +1,5 @@
 package cg.applcation.systemedesurveillance.administrateur;
 
-import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
