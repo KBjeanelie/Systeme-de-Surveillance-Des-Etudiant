@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_color_app"
-    tools:context=".Enseignant.AddStudentAttendance">
+    tools:context=".enseignant.AddStudentAttendance">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".Administrateur.AddStudent">
+        tools:context=".administrateur.AddStudent">
 
         <include layout="@layout/appbar"/>
 

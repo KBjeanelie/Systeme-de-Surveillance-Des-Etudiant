@@ -10,28 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemeDeSurveillance">
         <activity
-            android:name=".Enseignant.TeacherDashboard"
+            android:name=".enseignant.TeacherDashboard"
             android:exported="false" />
         <activity
-            android:name=".Enseignant.AddStudentAttendance"
+            android:name=".enseignant.AddStudentAttendance"
             android:exported="false" />
         <activity
-            android:name=".Enseignant.DisplayStudentsAttendance"
+            android:name=".enseignant.DisplayStudentsAttendance"
             android:exported="false" />
         <activity
-            android:name=".Administrateur.AddUserAccount"
+            android:name=".administrateur.AddUserAccount"
             android:exported="false" />
         <activity
-            android:name=".Administrateur.AddTeacher"
+            android:name=".administrateur.AddTeacher"
             android:exported="false" />
         <activity
-            android:name=".Administrateur.DisplayTeachers"
+            android:name=".administrateur.DisplayTeachers"
             android:exported="false" />
         <activity
-            android:name=".Administrateur.AddStudent"
+            android:name=".administrateur.AddStudent"
             android:exported="false" />
         <activity
-            android:name=".Authentification.LoginActivity"
+            android:name=".authentification.LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import cg.applcation.systemedesurveillance.Authentification.LoginActivity;
+import cg.applcation.systemedesurveillance.authentification.LoginActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

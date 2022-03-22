@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary_color"
     android:orientation="vertical"
-    tools:context=".Administrateur.AddStudent">
+    tools:context=".administrateur.AddStudent">
 
     <include layout="@layout/appbar"/>
 

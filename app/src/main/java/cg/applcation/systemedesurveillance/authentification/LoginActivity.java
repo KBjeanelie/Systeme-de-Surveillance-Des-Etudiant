@@ -1,4 +1,4 @@
-package cg.applcation.systemedesurveillance.Authentification;
+package cg.applcation.systemedesurveillance.authentification;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 
-import cg.applcation.systemedesurveillance.Administrateur.AddUserAccount;
-import cg.applcation.systemedesurveillance.Enseignant.AddStudentAttendance;
-import cg.applcation.systemedesurveillance.Enseignant.DisplayStudentsAttendance;
 import cg.applcation.systemedesurveillance.MainActivity;
 import cg.applcation.systemedesurveillance.R;
 

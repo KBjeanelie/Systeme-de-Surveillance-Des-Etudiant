@@ -4,29 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="?actionBarSize"
     android:background="@color/primary_color"
-    android:paddingTop="5dp"
+    android:gravity="center_vertical"
     android:orientation="horizontal">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_home"
-        app:tint="@color/white"
-        android:layout_marginStart="10dp"/>
-
-    <TextView
-        android:id="@+id/app_bar_title"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Administration"
-        android:fontFamily="sans-serif"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginTop="2dp"
-        android:layout_marginStart="2dp"
-        android:padding="5dp"
-        android:textColor="@color/white"
-        android:textAlignment="textStart"/>
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
+        <ImageView
+            android:id="@+id/ic_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_home"
+            app:tint="@color/white"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:id="@+id/app_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Administration"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/ic_home"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:textAlignment="textStart"/>
+
+        <ImageView
+            android:id="@+id/ic_logout"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_logout"
+            android:layout_alignParentRight="true"
+            app:tint="@color/white" />
+    </RelativeLayout>
 
 </LinearLayout>

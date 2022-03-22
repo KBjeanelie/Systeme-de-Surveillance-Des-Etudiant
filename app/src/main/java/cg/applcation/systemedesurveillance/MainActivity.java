@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import cg.applcation.systemedesurveillance.Administrateur.AddStudent;
-import cg.applcation.systemedesurveillance.Administrateur.AddTeacher;
-import cg.applcation.systemedesurveillance.Administrateur.AddUserAccount;
-import cg.applcation.systemedesurveillance.Administrateur.DisplayTeachers;
+import cg.applcation.systemedesurveillance.administrateur.AddStudent;
+import cg.applcation.systemedesurveillance.administrateur.AddTeacher;
+import cg.applcation.systemedesurveillance.administrateur.AddUserAccount;
+import cg.applcation.systemedesurveillance.administrateur.DisplayTeachers;
+import cg.applcation.systemedesurveillance.authentification.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, DisplayTeachers.class));
+                finish();
+            }
+        });
+
+        findViewById(R.id.ic_logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 finish();
             }
         });
