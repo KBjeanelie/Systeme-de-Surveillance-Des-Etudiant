@@ -120,24 +120,7 @@
                 android:drawableStart="@drawable/ic_level"
                 android:drawablePadding="10dp"
                 android:ems="10"
-                android:hint="Niveau"
-                android:inputType="text"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                android:autofillHints=""
-                android:textColorHint="@color/inputTextHintColor" />
-
-            <!-- option field -->
-            <EditText
-                android:id="@+id/option"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_input"
-                android:drawableStart="@drawable/ic_option"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:hint="Option"
+                android:hint="Classe"
                 android:inputType="text"
                 android:padding="10dp"
                 android:textColor="@color/black"

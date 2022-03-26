@@ -50,24 +50,20 @@ public class AddTeacher extends AppCompatActivity {
         this.work_at = findViewById(R.id.work_at);
         this.tel = findViewById(R.id.phone_number);
         this.address = findViewById(R.id.address);
-        this.teach_in = findViewById(R.id.classroom);
-        this.subject = findViewById(R.id.subject);
         this.sex = findViewById(R.id.sex);
 
         findViewById(R.id.btn_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String lastname = AddTeacher.this.lastname.getText().toString().trim();
-                String firstname = AddTeacher.this.firstname.getText().toString().trim();
-                String email = AddTeacher.this.email.getText().toString().trim();
-                String job_function = AddTeacher.this.job_function.getText().toString().trim();
-                String work_at = AddTeacher.this.work_at.getText().toString().trim();
-                String tel = AddTeacher.this.tel.getText().toString().trim();
-                String address = AddTeacher.this.address.getText().toString().trim();
-                String teach_in = AddTeacher.this.teach_in.getText().toString().trim();
-                String subject = AddTeacher.this.subject.getText().toString().trim();
-                String sex = AddTeacher.this.sex.getText().toString().trim();
+                String lastname = AddTeacher.this.lastname.getText().toString();
+                String firstname = AddTeacher.this.firstname.getText().toString();
+                String email = AddTeacher.this.email.getText().toString();
+                String job_function = AddTeacher.this.job_function.getText().toString();
+                String work_at = AddTeacher.this.work_at.getText().toString();
+                String tel = AddTeacher.this.tel.getText().toString();
+                String address = AddTeacher.this.address.getText().toString();
+                String sex = AddTeacher.this.sex.getText().toString();
 
                 if (lastname.matches(""))
                 {
@@ -90,18 +86,12 @@ public class AddTeacher extends AppCompatActivity {
                 }else if (address.matches(""))
                 {
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entrer une adresse", Toast.LENGTH_LONG).show();
-                }else if (teach_in.matches(""))
-                {
-                    Toast.makeText(getApplicationContext(), "Vous n'avez pas entrer une classe", Toast.LENGTH_LONG).show();
-                }else if (subject.matches(""))
-                {
-                    Toast.makeText(getApplicationContext(), "Vous n'avez pas entrer une matire", Toast.LENGTH_LONG).show();
                 }else if (sex.matches(""))
                 {
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entrer un sex", Toast.LENGTH_LONG).show();
                 }else
                 {
-                    Teacher teacher = new Teacher(lastname, firstname, email, job_function, work_at, tel, address, teach_in, subject, sex, "");
+                    Teacher teacher = new Teacher(lastname, firstname, email, job_function, work_at, tel, address,  sex, "");
                     if (! AddTeacher.this.saveData(teacher)){
                         Toast.makeText(getApplicationContext(), "No database found :(", Toast.LENGTH_LONG).show();
                     }

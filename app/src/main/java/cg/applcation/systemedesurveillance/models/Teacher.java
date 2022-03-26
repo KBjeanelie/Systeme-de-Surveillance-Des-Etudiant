@@ -9,12 +9,10 @@ public class Teacher {
     private String work_at;
     private String tel;
     private String address;
-    private String teach_in;
-    private String subject;
     private String sex;
     private String created_at;
 
-    public Teacher(String lastname, String firstname, String email, String job_function, String work_at, String tel, String address, String teach_in, String subject, String sex, String created_at) {
+    public Teacher(String lastname, String firstname, String email, String job_function, String work_at, String tel, String address, String sex, String created_at) {
         this.lastname = lastname;
         this.firstname = firstname;
         this.email = email;
@@ -22,8 +20,6 @@ public class Teacher {
         this.work_at = work_at;
         this.tel = tel;
         this.address = address;
-        this.teach_in = teach_in;
-        this.subject = subject;
         this.sex = sex;
         this.created_at = created_at;
     }
@@ -82,22 +78,6 @@ public class Teacher {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getTeach_in() {
-        return teach_in;
-    }
-
-    public void setTeach_in(String teach_in) {
-        this.teach_in = teach_in;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
     }
 
     public String getSex() {

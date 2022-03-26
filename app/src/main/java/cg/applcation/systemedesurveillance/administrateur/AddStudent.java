@@ -14,7 +14,7 @@ import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.models.Student;
 
 public class AddStudent extends AppCompatActivity {
-    EditText lastname, firstname, email, tel, address, level, option, sex;
+    EditText lastname, firstname, email, tel, address, level, sex;
     ImageView ic_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,6 @@ public class AddStudent extends AppCompatActivity {
         this.tel = findViewById(R.id.phone_number);
         this.address = findViewById(R.id.address);
         this.level = findViewById(R.id.classroom);
-        this.option = findViewById(R.id.option);
         this.sex = findViewById(R.id.sex);
 
 
@@ -35,14 +34,13 @@ public class AddStudent extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String lastname = AddStudent.this.lastname.getText().toString().trim();
-                String firstname = AddStudent.this.firstname.getText().toString().trim();
-                String email = AddStudent.this.email.getText().toString().trim();
-                String tel = AddStudent.this.tel.getText().toString().trim();
-                String address = AddStudent.this.address.getText().toString().trim();
-                String level = AddStudent.this.level.getText().toString().trim();
-                String option = AddStudent.this.option.getText().toString().trim();
-                String sex = AddStudent.this.sex.getText().toString().trim();
+                String lastname = AddStudent.this.lastname.getText().toString();
+                String firstname = AddStudent.this.firstname.getText().toString();
+                String email = AddStudent.this.email.getText().toString();
+                String tel = AddStudent.this.tel.getText().toString();
+                String address = AddStudent.this.address.getText().toString();
+                int level = Integer.parseInt(AddStudent.this.level.getText().toString());
+                String sex = AddStudent.this.sex.getText().toString();
 
                 if (lastname.matches(""))
                 {
@@ -59,18 +57,15 @@ public class AddStudent extends AppCompatActivity {
                 }else if (address.matches(""))
                 {
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entrer une adresse", Toast.LENGTH_LONG).show();
-                }else if (level.matches(""))
+                }else if (level == 0)
                 {
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entrer un niveau", Toast.LENGTH_LONG).show();
-                }else if (option.matches(""))
-                {
-                    Toast.makeText(getApplicationContext(), "Vous n'avez pas entrer une option", Toast.LENGTH_LONG).show();
                 }else if (sex.matches(""))
                 {
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entrer un sex", Toast.LENGTH_LONG).show();
                 }else
                 {
-                    Student student = new Student(lastname, firstname, email, tel, address, level, option, sex);
+                    Student student = new Student(lastname, firstname, email, tel, address, sex);
 
                     if (!AddStudent.this.saveData(student))
                         Toast.makeText(getApplicationContext(), "No database found :(", Toast.LENGTH_LONG).show();
