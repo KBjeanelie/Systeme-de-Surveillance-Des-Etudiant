@@ -3,10 +3,13 @@ package cg.applcation.systemedesurveillance.enseignant;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.models.DatabaseAccess;
 
 public class AddStudentAttendance extends AppCompatActivity {
 
@@ -23,4 +26,15 @@ public class AddStudentAttendance extends AppCompatActivity {
             }
         });
     }
+
+    /*** public void storeDataInList(){
+        Cursor cursor = myDB.readAllDataInTableClassroom();
+
+        if (cursor.getCount() == 0){
+            Toast.makeText(getApplicationContext(), "No data store in classroom", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(getApplicationContext(), "Ready to store data", Toast.LENGTH_LONG).show();
+        }
+    }
+     ***/
 }
