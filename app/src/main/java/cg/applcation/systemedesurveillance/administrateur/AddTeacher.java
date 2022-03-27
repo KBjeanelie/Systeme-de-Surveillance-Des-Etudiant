@@ -24,7 +24,6 @@ public class AddTeacher extends AppCompatActivity {
     ImageView ic_back;
     TextView app_bar_title;
 
-    DatabaseAccess myDatabaseAccess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +94,8 @@ public class AddTeacher extends AppCompatActivity {
                 }else
                 {
                     Teacher teacher = new Teacher(lastname, firstname, email, job_function, work_at, tel, address,  sex, "");
-                    myDatabaseAccess = DatabaseAccess.getInstance(getApplicationContext());
+                    DatabaseAccess myDatabaseAccess = DatabaseAccess.getInstance(getApplicationContext());
+                    myDatabaseAccess.openForWritableDatabase();
                     boolean check = myDatabaseAccess.addTeacher(teacher);
 
                     if (check){
@@ -111,6 +111,9 @@ public class AddTeacher extends AppCompatActivity {
                     }else {
                         Toast.makeText(getApplicationContext(), "Failed saving teacher in database :(", Toast.LENGTH_LONG).show();
                     }
+
+                    myDatabaseAccess.closeDatabase();
+
                 }
             }
         });

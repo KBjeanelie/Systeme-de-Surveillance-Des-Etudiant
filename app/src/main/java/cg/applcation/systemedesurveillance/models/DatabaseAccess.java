@@ -40,7 +40,6 @@ public class DatabaseAccess {
     }
 
     public boolean addTeacher(Teacher teacher){
-        openForWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
         contentValues.put("teacher_lastname", teacher.getLastname());
@@ -54,8 +53,7 @@ public class DatabaseAccess {
 
         long result = database.insert("Teacher", null, contentValues);
 
-        if(result == -1){
-            database.close();
+        if (result == -1){
             return false;
         }else {
             return true;
