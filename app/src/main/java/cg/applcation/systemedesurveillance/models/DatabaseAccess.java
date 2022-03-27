@@ -39,7 +39,8 @@ public class DatabaseAccess {
         }
     }
 
-    public void addTeacher(Context context, Teacher teacher){
+    public boolean addTeacher(Teacher teacher){
+        openForWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
         contentValues.put("teacher_lastname", teacher.getLastname());
@@ -54,9 +55,10 @@ public class DatabaseAccess {
         long result = database.insert("Teacher", null, contentValues);
 
         if(result == -1){
-            Toast.makeText(context, "Failed saving teacher in database :(", Toast.LENGTH_LONG).show();
+            database.close();
+            return false;
         }else {
-            Toast.makeText(context, "Added successfully :)", Toast.LENGTH_LONG).show();
+            return true;
         }
     }
 

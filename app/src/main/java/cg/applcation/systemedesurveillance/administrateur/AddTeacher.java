@@ -15,13 +15,16 @@ import java.util.Date;
 
 import cg.applcation.systemedesurveillance.MainActivity;
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.models.DatabaseAccess;
 import cg.applcation.systemedesurveillance.models.Teacher;
 
 
 public class AddTeacher extends AppCompatActivity {
-    EditText lastname, firstname, email,job_function, work_at, tel, address, teach_in, subject, sex;
+    EditText lastname, firstname, email,job_function, work_at, tel, address, sex;
     ImageView ic_back;
     TextView app_bar_title;
+
+    DatabaseAccess myDatabaseAccess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,8 +95,21 @@ public class AddTeacher extends AppCompatActivity {
                 }else
                 {
                     Teacher teacher = new Teacher(lastname, firstname, email, job_function, work_at, tel, address,  sex, "");
-                    if (! AddTeacher.this.saveData(teacher)){
-                        Toast.makeText(getApplicationContext(), "No database found :(", Toast.LENGTH_LONG).show();
+                    myDatabaseAccess = DatabaseAccess.getInstance(getApplicationContext());
+                    boolean check = myDatabaseAccess.addTeacher(teacher);
+
+                    if (check){
+                        Toast.makeText(getApplicationContext(), "Added Successfully", Toast.LENGTH_LONG).show();
+                        AddTeacher.this.lastname.setText("");
+                        AddTeacher.this.firstname.setText("");
+                        AddTeacher.this.email.setText("");
+                        AddTeacher.this.job_function.setText("");
+                        AddTeacher.this.work_at.setText("");
+                        AddTeacher.this.address.setText("");
+                        AddTeacher.this.tel.setText("");
+                        AddTeacher.this.sex.setText("");
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Failed saving teacher in database :(", Toast.LENGTH_LONG).show();
                     }
                 }
             }
