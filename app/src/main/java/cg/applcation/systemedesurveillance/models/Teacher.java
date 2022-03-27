@@ -2,6 +2,7 @@ package cg.applcation.systemedesurveillance.models;
 
 public class Teacher {
 
+    private long id_teacher;
     private String lastname;
     private String firstname;
     private String email;
@@ -70,6 +71,14 @@ public class Teacher {
 
     public void setTel(String tel) {
         this.tel = tel;
+    }
+
+    public long getId_teacher() {
+        return id_teacher;
+    }
+
+    public void setId_teacher(long id_teacher) {
+        this.id_teacher = id_teacher;
     }
 
     public String getAddress() {
