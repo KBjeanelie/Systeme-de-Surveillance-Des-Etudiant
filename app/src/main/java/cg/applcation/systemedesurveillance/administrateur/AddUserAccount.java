@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import cg.applcation.systemedesurveillance.MainActivity;
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.models.DatabaseAccess;
 import cg.applcation.systemedesurveillance.models.UserAccount;
 
 public class AddUserAccount extends AppCompatActivity {
@@ -20,10 +21,15 @@ public class AddUserAccount extends AppCompatActivity {
     ImageView ic_back;
     TextView app_bar_title;
 
+    DatabaseAccess databaseAccess;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user_account);
+
+        databaseAccess = DatabaseAccess.getInstance(AddUserAccount.this);
+        databaseAccess.openForWritableDatabase();
 
         ic_back = findViewById(R.id.icon_back);
         app_bar_title = findViewById(R.id.app_bar_title);
@@ -53,13 +59,28 @@ public class AddUserAccount extends AppCompatActivity {
 
                 if(email.matches("")){
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entré un email", Toast.LENGTH_LONG).show();
-                }else if(tel.matches("")){
+                }
+                else if(tel.matches("")){
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entré un numero de telephone", Toast.LENGTH_LONG).show();
-                }else if(password.matches("")){
+                }
+                else if(password.matches("")){
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entré un mot de passe", Toast.LENGTH_LONG).show();
-                }else {
+                }
+                else {
                     UserAccount userAccount = new UserAccount(email, tel, password);
-                    Toast.makeText(getApplicationContext(), "No database found :(", Toast.LENGTH_LONG).show();
+                    int id_teacher = databaseAccess.getIdFromTableTeacher(userAccount.getEmail());
+
+                    boolean check = databaseAccess.addAccountUser(email, userAccount.getPassword(), id_teacher);
+
+                    if (!check) {
+                        Toast.makeText(getApplicationContext(), "Failed adding Account in database :(", Toast.LENGTH_LONG).show();
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Added successfully :)", Toast.LENGTH_LONG).show();
+                        AddUserAccount.this.email.setText("");
+                        AddUserAccount.this.teacher_tel.setText("");
+                        AddUserAccount.this.password.setText("");
+                    }
+
                 }
             }
         });

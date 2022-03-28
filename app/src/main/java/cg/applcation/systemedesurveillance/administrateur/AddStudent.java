@@ -94,7 +94,7 @@ public class AddStudent extends AppCompatActivity {
                 {
 
                     Student student = new Student(lastname, firstname, email, tel, address, sex);
-                    int id_classroom = databaseAccess.getIdFromLabelClassroom(student_classroom);
+                    int id_classroom = databaseAccess.getIdFromTableClassroom(student_classroom);
                     boolean result = databaseAccess.addStudent(student, id_classroom);
 
                     if(!result){
@@ -113,7 +113,7 @@ public class AddStudent extends AppCompatActivity {
             }
         });
 
-
+        databaseAccess.closeDatabase();
         ic_back = findViewById(R.id.icon_back);
 
         ic_back.setOnClickListener(new View.OnClickListener() {

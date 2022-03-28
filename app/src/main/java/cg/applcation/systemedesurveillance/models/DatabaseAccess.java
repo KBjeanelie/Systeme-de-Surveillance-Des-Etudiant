@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class DatabaseAccess {
@@ -62,6 +63,15 @@ public class DatabaseAccess {
         }
     }
 
+    public int getIdFromTableTeacher(String email){
+        if (database != null){
+            cursor = database.query("Teacher", new String[]{"id_teacher"}, "teacher_email=?",
+                    new String[]{email}, null, null, null);
+        }
+        cursor.moveToNext();
+        return cursor.getInt(0);
+    }
+
     public boolean addStudent(Student student, int id_classroom){
         ContentValues contentValues = new ContentValues();
 
@@ -82,7 +92,7 @@ public class DatabaseAccess {
         }
     }
 
-    public void addAccountUser(Context context, String username, String password, int teacher_id){
+    public boolean addAccountUser(String username, String password, long teacher_id){
         ContentValues contentValues = new ContentValues();
 
         contentValues.put("username", username);
@@ -92,11 +102,35 @@ public class DatabaseAccess {
         long result = database.insert("Account", null, contentValues);
 
         if(result == -1){
-            Toast.makeText(context, "Failed adding Account in database :(", Toast.LENGTH_LONG).show();
+            return false;
         }else {
-            Toast.makeText(context, "Added successfully :)", Toast.LENGTH_LONG).show();
+            return true;
         }
     }
+
+    /**
+    public boolean addStudentAttendance(int id_teacher, int id_subject, int id_classroom, Date date_of_classes, int id_student)
+    {
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("id_teacher", id_teacher);
+        contentValues.put("id_subject", id_subject);
+        contentValues.put("id_classroom", id_classroom);
+        contentValues.put("date_of_classes", String.valueOf(date_of_classes));
+
+        long latestIdClasses = database.insert("Classes", null, contentValues);
+        if (latestIdClasses == -1){
+            return false;
+        }else {
+            ContentValues cv  = new ContentValues();
+            cv.put("id_classes", latestIdClasses);
+            cv.put("id_student", id_student);
+
+            database.insert("Presence", null, cv);
+            return true;
+        }
+    }
+    ***/
 
     private Cursor readAllDataInTableClassroom(){
         String query = "SELECT label_classroom FROM Classroom;";
@@ -148,9 +182,7 @@ public class DatabaseAccess {
         return cursor;
     }
 
-    public int getIdFromLabelClassroom(String label_classroom){
-        openForReadableDatabase();
-
+    public int getIdFromTableClassroom(String label_classroom){
         if (database != null){
             cursor = database.query("Classroom", new String[]{"id_classroom"}, "label_classroom=?",
                     new String[]{label_classroom}, null, null, null);
