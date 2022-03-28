@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class DatabaseAccess {
 
     private SQLiteOpenHelper sqLiteOpenHelper;
@@ -96,15 +98,43 @@ public class DatabaseAccess {
         }
     }
 
-    public Cursor readAllDataInTableClassroom(){
-        String query = "SELECT * FROM Classroom;";
-        openForReadableDatabase();
+    private Cursor readAllDataInTableClassroom(){
+        String query = "SELECT label_classroom FROM Classroom;";
 
         if(database != null){
             cursor = database.rawQuery(query, null);
         }
 
         return cursor;
+    }
+
+    public ArrayList<String> getAllDataInClassroom(){
+        cursor = readAllDataInTableClassroom();
+        ArrayList<String> Classrooms = new ArrayList<String>();
+        while (cursor.moveToNext()){
+            Classrooms.add(cursor.getString(0));
+        }
+        return Classrooms;
+    }
+
+
+    private Cursor readAllDataInTableSubject(){
+        String query = "SELECT label_subject FROM Subject;";
+
+        if(database != null){
+            cursor = database.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
+
+    public ArrayList<String> getAllDataInSubject(){
+        cursor = readAllDataInTableSubject();
+        ArrayList<String> Subjects = new ArrayList<String>();
+        while (cursor.moveToNext()){
+            Subjects.add(cursor.getString(0));
+        }
+        return Subjects;
     }
 
     public Cursor readAllDataInTableTeacher(){

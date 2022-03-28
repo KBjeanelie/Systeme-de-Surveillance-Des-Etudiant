@@ -111,21 +111,32 @@
                 android:textColorHint="@color/inputTextHintColor" />
 
             <!-- classroom field -->
-            <EditText
-                android:id="@+id/classroom"
+            <RelativeLayout
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/bg_input"
-                android:drawableStart="@drawable/ic_level"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:hint="Classe"
-                android:inputType="text"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                android:autofillHints=""
-                android:textColorHint="@color/inputTextHintColor" />
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/t2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choisir Classe"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/primary_color"
+                    android:fontFamily="sans-serif"
+                    android:textSize="18sp"
+                    android:layout_alignParentStart="true"/>
+
+                <Spinner
+                    android:id="@+id/ads_id_classroom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/t2"
+                    android:spinnerMode="dropdown" />
+
+            </RelativeLayout>
 
             <!-- sex field -->
             <EditText
