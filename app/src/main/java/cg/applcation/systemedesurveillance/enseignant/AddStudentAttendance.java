@@ -3,17 +3,14 @@ package cg.applcation.systemedesurveillance.enseignant;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
-import cg.applcation.systemedesurveillance.models.Classroom;
 import cg.applcation.systemedesurveillance.models.DatabaseAccess;
 
 public class AddStudentAttendance extends AppCompatActivity {
@@ -34,8 +31,8 @@ public class AddStudentAttendance extends AppCompatActivity {
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.openForReadableDatabase();
 
-        classrooms = databaseAccess.getAllDataInClassroom();
-        subjects = databaseAccess.getAllDataInSubject();
+        classrooms = databaseAccess.getAllDataInTableClassroom();
+        subjects = databaseAccess.getAllDataInTableSubject();
 
         ArrayAdapter<String> adapter_class = new ArrayAdapter<String>(this, R.layout.spinner_item_classroom, R.id.label_classroom, classrooms);
         spinner_classroom.setAdapter(adapter_class);

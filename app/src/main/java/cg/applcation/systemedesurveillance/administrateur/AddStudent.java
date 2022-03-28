@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,6 +23,7 @@ public class AddStudent extends AppCompatActivity {
     EditText lastname, firstname, email, tel, address, level, sex;
     Spinner spinner_classroom;
     ImageView ic_back;
+    String student_classroom;
 
     DatabaseAccess databaseAccess;
     ArrayList<String> classrooms = new ArrayList<String>();
@@ -36,7 +38,7 @@ public class AddStudent extends AppCompatActivity {
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.openForReadableDatabase();
 
-        classrooms = databaseAccess.getAllDataInClassroom();
+        classrooms = databaseAccess.getAllDataInTableClassroom();
         ArrayAdapter<String> adapter_class = new ArrayAdapter<String>(this, R.layout.spinner_item_classroom, R.id.label_classroom, classrooms);
         spinner_classroom.setAdapter(adapter_class);
 
@@ -46,6 +48,17 @@ public class AddStudent extends AppCompatActivity {
         this.tel = findViewById(R.id.phone_number);
         this.address = findViewById(R.id.address);
         this.sex = findViewById(R.id.sex);
+        spinner_classroom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                student_classroom = adapterView.getItemAtPosition(i).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
 
         findViewById(R.id.btn_add).setOnClickListener(new View.OnClickListener() {
@@ -79,9 +92,23 @@ public class AddStudent extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entrer un sex", Toast.LENGTH_LONG).show();
                 }else
                 {
-                    Student student = new Student(lastname, firstname, email, tel, address, sex);
 
-                    Toast.makeText(getApplicationContext(), student.getEmail(), Toast.LENGTH_LONG).show();
+                    Student student = new Student(lastname, firstname, email, tel, address, sex);
+                    int id_classroom = databaseAccess.getIdFromLabelClassroom(student_classroom);
+                    boolean result = databaseAccess.addStudent(student, id_classroom);
+
+                    if(!result){
+                        Toast.makeText(getApplicationContext(), "Failed adding Student in database :(", Toast.LENGTH_LONG).show();
+                    }else {
+                        AddStudent.this.lastname.setText("");
+                        AddStudent.this.firstname.setText("");
+                        AddStudent.this.email.setText("");
+                        AddStudent.this.address.setText("");
+                        AddStudent.this.tel.setText("");
+                        AddStudent.this.sex.setText("");
+                        Toast.makeText(getApplicationContext(), "Added successfully :)", Toast.LENGTH_LONG).show();
+                    }
+
                 }
             }
         });

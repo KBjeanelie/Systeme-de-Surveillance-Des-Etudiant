@@ -62,7 +62,7 @@ public class DatabaseAccess {
         }
     }
 
-    public void addStudent(Context context, Student student, int id_classroom){
+    public boolean addStudent(Student student, int id_classroom){
         ContentValues contentValues = new ContentValues();
 
         contentValues.put("student_lastname", student.getLastname());
@@ -75,10 +75,10 @@ public class DatabaseAccess {
 
         long result = database.insert("Student", null, contentValues);
 
-        if(result == -1){
-            Toast.makeText(context, "Failed adding Student in database :(", Toast.LENGTH_LONG).show();
+        if (result == -1){
+            return false;
         }else {
-            Toast.makeText(context, "Added successfully :)", Toast.LENGTH_LONG).show();
+            return true;
         }
     }
 
@@ -108,7 +108,7 @@ public class DatabaseAccess {
         return cursor;
     }
 
-    public ArrayList<String> getAllDataInClassroom(){
+    public ArrayList<String> getAllDataInTableClassroom(){
         cursor = readAllDataInTableClassroom();
         ArrayList<String> Classrooms = new ArrayList<String>();
         while (cursor.moveToNext()){
@@ -128,7 +128,7 @@ public class DatabaseAccess {
         return cursor;
     }
 
-    public ArrayList<String> getAllDataInSubject(){
+    public ArrayList<String> getAllDataInTableSubject(){
         cursor = readAllDataInTableSubject();
         ArrayList<String> Subjects = new ArrayList<String>();
         while (cursor.moveToNext()){
@@ -146,6 +146,17 @@ public class DatabaseAccess {
         }
 
         return cursor;
+    }
+
+    public int getIdFromLabelClassroom(String label_classroom){
+        openForReadableDatabase();
+
+        if (database != null){
+            cursor = database.query("Classroom", new String[]{"id_classroom"}, "label_classroom=?",
+                    new String[]{label_classroom}, null, null, null);
+        }
+        cursor.moveToNext();
+        return cursor.getInt(0);
     }
 
 }
