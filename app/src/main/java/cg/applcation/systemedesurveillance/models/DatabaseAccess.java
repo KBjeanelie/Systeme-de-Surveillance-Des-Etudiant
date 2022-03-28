@@ -173,12 +173,20 @@ public class DatabaseAccess {
 
     public Cursor readAllDataInTableTeacher(){
         String query = "SELECT * FROM Teacher;";
-        openForReadableDatabase();
 
         if(database != null){
             cursor = database.rawQuery(query, null);
         }
 
+        return cursor;
+    }
+
+    public Cursor readAllDataInTableAccount(){
+        String query = "SELECT * FROM Account;";
+
+        if (database != null){
+            cursor = database.rawQuery(query, null);
+        }
         return cursor;
     }
 

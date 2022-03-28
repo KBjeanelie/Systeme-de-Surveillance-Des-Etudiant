@@ -3,12 +3,11 @@ package cg.applcation.systemedesurveillance.models;
 public class UserAccount {
 
     private String email;
-    private String teacher_tel;
+    private long id_teacher;
     private String password;
 
-    public UserAccount(String email, String teacher_tel, String password) {
+    public UserAccount(String email, String password) {
         this.email = email;
-        this.teacher_tel = teacher_tel;
         this.password = password;
     }
 
@@ -20,12 +19,12 @@ public class UserAccount {
         this.email = email;
     }
 
-    public String getTeacher_tel() {
-        return teacher_tel;
+    public long getId_teacher() {
+        return id_teacher;
     }
 
-    public void setTeacher_tel(String teacher_tel) {
-        this.teacher_tel = teacher_tel;
+    public void setId_teacher(long id_teacher) {
+        this.id_teacher = id_teacher;
     }
 
     public String getPassword() {

@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
+import cg.applcation.systemedesurveillance.SplashScreenActivity;
 import cg.applcation.systemedesurveillance.authentification.LoginActivity;
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.models.Teacher;
 
 public class TeacherDashboard extends AppCompatActivity {
 
@@ -29,6 +32,13 @@ public class TeacherDashboard extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(TeacherDashboard.this, DisplayStudentsAttendance.class));
                 finish();
+            }
+        });
+
+        findViewById(R.id.show_profile).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TeacherDashboard.this, Profile.class));
             }
         });
     }

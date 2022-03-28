@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import cg.applcation.systemedesurveillance.authentification.LoginActivity;
+import cg.applcation.systemedesurveillance.authentification.Session;
+import cg.applcation.systemedesurveillance.models.Teacher;
+import cg.applcation.systemedesurveillance.models.UserAccount;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -14,9 +17,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     public static String ADMIN_USERNAME = "admin";
     public static String ADMIN_PASSWORD = "admin";
 
-    /**  THIS IS THE DEFAULT USER OR TEACHER ACCOUNT INFORMATION FOR LOG INTO APP  */
-    public static String USERNAME = "username";
-    public static String PASSWORD = "password";
+    public static Session current_session;
 
 
     @Override
@@ -39,4 +40,5 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         }, 3*1000); // wait for 5 seconds
     }
+
 }

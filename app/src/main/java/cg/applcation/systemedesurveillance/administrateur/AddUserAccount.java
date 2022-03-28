@@ -67,7 +67,7 @@ public class AddUserAccount extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entré un mot de passe", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    UserAccount userAccount = new UserAccount(email, tel, password);
+                    UserAccount userAccount = new UserAccount(email,password);
                     int id_teacher = databaseAccess.getIdFromTableTeacher(userAccount.getEmail());
 
                     boolean check = databaseAccess.addAccountUser(email, userAccount.getPassword(), id_teacher);

@@ -23,6 +23,7 @@ public class Teacher {
         this.address = address;
         this.sex = sex;
         this.created_at = created_at;
+        this.id_teacher = 0;
     }
 
     public String getLastname() {
@@ -73,10 +74,6 @@ public class Teacher {
         this.tel = tel;
     }
 
-    public long getId_teacher() {
-        return id_teacher;
-    }
-
     public void setId_teacher(long id_teacher) {
         this.id_teacher = id_teacher;
     }
@@ -103,5 +100,9 @@ public class Teacher {
 
     public void setCreated_at(String created_at) {
         this.created_at = created_at;
+    }
+
+    public long getId_teacher() {
+        return id_teacher;
     }
 }

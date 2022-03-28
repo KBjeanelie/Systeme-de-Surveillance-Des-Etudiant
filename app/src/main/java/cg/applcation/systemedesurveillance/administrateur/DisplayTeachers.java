@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import cg.applcation.systemedesurveillance.CustomeTeacherAdapter;
+import cg.applcation.systemedesurveillance.customadapter.CustomeTeacherAdapter;
 import cg.applcation.systemedesurveillance.MainActivity;
 import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.models.DatabaseAccess;

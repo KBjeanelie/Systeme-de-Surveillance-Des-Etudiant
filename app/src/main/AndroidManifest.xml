@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemeDeSurveillance">
         <activity
+            android:name=".enseignant.Profile"
+            android:exported="false" />
+        <activity
             android:name=".enseignant.TeacherDashboard"
             android:exported="false" />
         <activity

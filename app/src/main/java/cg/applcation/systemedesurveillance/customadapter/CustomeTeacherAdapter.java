@@ -1,4 +1,4 @@
-package cg.applcation.systemedesurveillance;
+package cg.applcation.systemedesurveillance.customadapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,9 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.net.ContentHandler;
 import java.util.ArrayList;
 
+import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.models.Teacher;
 
 public class CustomeTeacherAdapter extends RecyclerView.Adapter<CustomeTeacherAdapter.MyViewHolder> {
