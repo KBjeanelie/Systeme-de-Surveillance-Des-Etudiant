@@ -14,102 +14,185 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include">
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        android:layout_marginTop="50dp"
+        tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_add_student_attendance"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:layout_marginTop="100dp"
-                android:backgroundTint="@color/black"
-                app:cardCornerRadius="15dp">
+                android:layout_height="wrap_content"
+                android:padding="5dp">
 
-                <ImageView
-                    android:layout_width="72dp"
-                    android:layout_height="72dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_add_student"
-                    app:tint="@color/white" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_add_classes"
+                    android:layout_width="143dp"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="56dp"
+                    android:backgroundTint="@color/black"
+                    app:cardCornerRadius="15dp"
+                    android:layout_alignParentStart="true">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="45sp"
-                    android:text="Ajouter la Présence d'un Etudiant"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add"
+                        app:tint="@color/white" />
 
-            </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40sp"
+                        android:text="Ajouter un Cours"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_display_student"
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/display_classes"
+                    android:layout_width="143dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="56dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add2"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40sp"
+                        android:text="Voir les cours"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:layout_marginTop="75dp"
-                android:backgroundTint="@color/white"
-                app:cardCornerRadius="15dp">
+                android:layout_height="wrap_content"
+                android:padding="5dp">
 
-                <ImageView
-                    android:layout_width="72dp"
-                    android:layout_height="72dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_list_present"
-                    app:tint="@color/black" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_display_presence"
+                    android:layout_width="143dp"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="56dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="15dp"
+                    android:layout_alignParentStart="true">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="45sp"
-                    android:text="Voir la Présence des Etudiants"
-                    android:padding="5dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_list"
+                        app:tint="@color/black" />
 
-            </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40sp"
+                        android:text="Voir les Presence"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_display_all_student"
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_display_all_pressence"
+                    android:layout_width="143dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="56dp"
+                    android:backgroundTint="@color/black"
+                    app:cardCornerRadius="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_list_present"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40sp"
+                        android:text="Toutes les Presence"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:layout_marginTop="75dp"
-                android:backgroundTint="@color/black"
-                app:cardCornerRadius="15dp">
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
 
-                <ImageView
-                    android:layout_width="72dp"
-                    android:layout_height="72dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_list"
-                    app:tint="@color/white" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/show_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="56dp"
+                    android:backgroundTint="@color/black"
+                    app:cardCornerRadius="15dp"
+                    android:layout_alignParentStart="true">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="45sp"
-                    android:padding="5dp"
-                    android:text="Voir la Présence des Etudiants"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_person"
+                        app:tint="@color/white" />
 
-            </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50sp"
+                        android:textSize="25sp"
+                        android:text="Profile"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>

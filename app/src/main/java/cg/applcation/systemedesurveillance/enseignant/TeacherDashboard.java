@@ -16,15 +16,7 @@ public class TeacherDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_dashboard);
 
-        findViewById(R.id.card_display_all_student).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(TeacherDashboard.this, DisplayStudentsAttendance.class));
-                finish();
-            }
-        });
-
-        findViewById(R.id.card_add_student_attendance).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.card_add_classes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(TeacherDashboard.this, AddStudentAttendance.class));
@@ -32,11 +24,10 @@ public class TeacherDashboard extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.ic_logout).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.card_display_presence).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(TeacherDashboard.this, DisplayStudentsAttendance.class));
                 finish();
             }
         });
