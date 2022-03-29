@@ -178,7 +178,7 @@ public class DatabaseAccess {
     }
 
     public ArrayList<String> getAllDataInTableSubject(){
-        cursor = readAllDataInTableSubject();
+        cursor = __readAllDataInTableSubject();
         ArrayList<String> Subjects = new ArrayList<String>();
         while (cursor.moveToNext()){
             Subjects.add(cursor.getString(0));

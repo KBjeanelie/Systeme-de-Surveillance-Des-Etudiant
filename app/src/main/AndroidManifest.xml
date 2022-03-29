@@ -9,13 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemeDeSurveillance">
+
         <activity
             android:name=".enseignant.ShowPresence"
+            android:label="Liste de Presence"
+            android:parentActivityName=".enseignant.TeacherDashboard"
             android:exported="false" />
         <activity
             android:name=".enseignant.DisplayAllClasses"
             android:label="Listes des Cours"
-            android:parentActivityName=".TeacherDashboard"
+            android:parentActivityName=".enseignant.TeacherDashboard"
             android:exported="false" />
         <activity
             android:name=".administrateur.AddSubject"
@@ -31,27 +34,23 @@
             android:name=".enseignant.Profile"
             android:exported="false"
             android:label="Profile"
-            android:parentActivityName=".TeacherDashboard" />
+            android:parentActivityName=".enseignant.TeacherDashboard" />
         <activity
             android:name=".enseignant.AddAClass"
             android:exported="false"
             android:label="Ajouter un Cours"
-            android:parentActivityName=".TeacherDashboard" />
+            android:parentActivityName=".enseignant.TeacherDashboard" />
         <activity
             android:name=".enseignant.DisplayStudentsAttendance"
             android:exported="false"
             android:label="Voir les Presence"
-            android:parentActivityName=".TeacherDashboard" />
+            android:parentActivityName=".enseignant.TeacherDashboard" />
         <activity
-            android:name=".TeacherDashboard"
+            android:name=".enseignant.TeacherDashboard"
             android:exported="true"
             android:label="Dashbaord">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <activity
             android:name=".administrateur.AddUserAccount"
             android:exported="false"

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import cg.applcation.systemedesurveillance.MainActivity;
 import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.SplashScreenActivity;
-import cg.applcation.systemedesurveillance.TeacherDashboard;
+import cg.applcation.systemedesurveillance.enseignant.TeacherDashboard;
 import cg.applcation.systemedesurveillance.models.DatabaseAccess;
 import cg.applcation.systemedesurveillance.models.Teacher;
 import cg.applcation.systemedesurveillance.models.UserAccount;
