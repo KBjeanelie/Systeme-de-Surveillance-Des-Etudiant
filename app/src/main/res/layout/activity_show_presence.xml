@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".enseignant.ShowPresence">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/primary_color"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Liste de Presence"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+        <TextView
+            android:id="@+id/date_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Date : "/>
+
+        <TextView
+            android:id="@+id/date2_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/date_txt"
+            android:layout_marginStart="80dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="25/01/2022"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <TextView
+            android:id="@+id/classroom_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Classe : "/>
+
+        <TextView
+            android:id="@+id/classroom2_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/classroom_txt"
+            android:layout_marginStart="70dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="LIC INFO 1"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <TextView
+            android:id="@+id/subject_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Matière : "/>
+
+        <TextView
+            android:id="@+id/subject2_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/subject_txt"
+            android:layout_marginStart="60dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Systeme d'Exploitation 3"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <TextView
+            android:id="@+id/teacher_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Enseignant : "/>
+
+        <TextView
+            android:id="@+id/teacher2_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/teacher_txt"
+            android:layout_marginStart="40dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Alain ECKONDZI"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Nom et Prenom des Etudiant"
+        android:gravity="start"
+        android:textSize="20sp"
+        android:textColor="@color/primary_color"
+        android:textStyle="bold"/>
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+            <include layout="@layout/student_attendance_item"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    android:layout_marginTop="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+            <TextView
+                android:id="@+id/class_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Cours du : "/>
+
+            <TextView
+                android:id="@+id/class2_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/class_txt"
+                android:layout_marginStart="80dp"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="25/01/2022"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+            <TextView
+                android:id="@+id/class_sub_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Matière: "/>
+
+            <TextView
+                android:id="@+id/class_s2_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/class_sub_txt"
+                android:layout_marginStart="90dp"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Système d'Exploitation"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+            <TextView
+                android:id="@+id/class_cl_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Classe : "/>
+
+            <TextView
+                android:id="@+id/class_cl2_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/class_cl_txt"
+                android:layout_marginStart="90dp"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="LIC INFO 3"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -24,17 +24,20 @@
         <entry key="app/src/main/res/layout/activity_add_subject.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_add_teacher.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_user_account.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_display_all_classes.xml" value="0.12466001813236627" />
         <entry key="app/src/main/res/layout/activity_display_students_attendance.xml" value="0.13296280461735785" />
         <entry key="app/src/main/res/layout/activity_display_teachers.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.12466001813236627" />
+        <entry key="app/src/main/res/layout/activity_show_presence.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_teacher_dashboard.xml" value="0.22" />
         <entry key="app/src/main/res/layout/appbar.xml" value="0.22" />
         <entry key="app/src/main/res/layout/appbar_dash.xml" value="0.2" />
         <entry key="app/src/main/res/layout/button_app.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/class_item.xml" value="0.22" />
         <entry key="app/src/main/res/layout/spinner_item_classroom.xml" value="0.22" />
         <entry key="app/src/main/res/layout/student_attendance_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/teacher_card_item.xml" value="0.25" />

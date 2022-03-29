@@ -10,28 +10,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemeDeSurveillance">
         <activity
-            android:name=".administrateur.AddSubject"
+            android:name=".enseignant.ShowPresence"
             android:exported="false" />
         <activity
-            android:name=".administrateur.AddClassroom"
+            android:name=".enseignant.DisplayAllClasses"
+            android:label="Listes des Cours"
+            android:parentActivityName=".TeacherDashboard"
             android:exported="false" />
+        <activity
+            android:name=".administrateur.AddSubject"
+            android:exported="false"
+            android:label="Ajouter une matière"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".administrateur.AddClassroom"
+            android:exported="false"
+            android:label="Ajouter une classe"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".enseignant.Profile"
             android:exported="false"
             android:label="Profile"
-            android:parentActivityName=".enseignant.TeacherDashboard" />
+            android:parentActivityName=".TeacherDashboard" />
         <activity
             android:name=".enseignant.AddAClass"
             android:exported="false"
             android:label="Ajouter un Cours"
-            android:parentActivityName=".enseignant.TeacherDashboard" />
+            android:parentActivityName=".TeacherDashboard" />
         <activity
             android:name=".enseignant.DisplayStudentsAttendance"
             android:exported="false"
             android:label="Voir les Presence"
-            android:parentActivityName=".enseignant.TeacherDashboard" />
+            android:parentActivityName=".TeacherDashboard" />
         <activity
-            android:name=".enseignant.TeacherDashboard"
+            android:name=".TeacherDashboard"
             android:exported="true"
             android:label="Dashbaord">
             <intent-filter>

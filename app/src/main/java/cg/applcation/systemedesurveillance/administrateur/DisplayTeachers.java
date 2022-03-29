@@ -22,9 +22,6 @@ import cg.applcation.systemedesurveillance.models.Teacher;
 
 public class DisplayTeachers extends AppCompatActivity {
 
-    ImageView ic_back;
-    TextView app_bar_title;
-
     DatabaseAccess databaseAccess;
     RecyclerView recyclerView;
     ArrayList<Teacher> teachers;

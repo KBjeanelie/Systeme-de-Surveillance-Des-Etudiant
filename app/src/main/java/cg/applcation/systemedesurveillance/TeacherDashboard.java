@@ -1,4 +1,4 @@
-package cg.applcation.systemedesurveillance.enseignant;
+package cg.applcation.systemedesurveillance;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,9 +10,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import cg.applcation.systemedesurveillance.MainActivity;
-import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.authentification.LoginActivity;
+import cg.applcation.systemedesurveillance.enseignant.AddAClass;
+import cg.applcation.systemedesurveillance.enseignant.DisplayAllClasses;
+import cg.applcation.systemedesurveillance.enseignant.DisplayStudentsAttendance;
+import cg.applcation.systemedesurveillance.enseignant.Profile;
 
 public class TeacherDashboard extends AppCompatActivity {
 
@@ -25,7 +27,6 @@ public class TeacherDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(TeacherDashboard.this, AddAClass.class));
-                finish();
             }
         });
 
@@ -33,7 +34,13 @@ public class TeacherDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(TeacherDashboard.this, DisplayStudentsAttendance.class));
-                finish();
+            }
+        });
+
+        findViewById(R.id.display_classes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TeacherDashboard.this, DisplayAllClasses.class));
             }
         });
 

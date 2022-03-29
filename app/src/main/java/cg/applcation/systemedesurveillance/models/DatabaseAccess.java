@@ -127,7 +127,7 @@ public class DatabaseAccess {
     }
 
 
-    private Cursor readAllDataInTableClassroom(){
+    private Cursor __readAllDataInTableClassroom(){
         String query = "SELECT label_classroom FROM Classroom;";
 
         if(database != null){
@@ -138,7 +138,7 @@ public class DatabaseAccess {
     }
 
     public ArrayList<String> getAllDataInTableClassroom(){
-        cursor = readAllDataInTableClassroom();
+        cursor = __readAllDataInTableClassroom();
         ArrayList<String> Classrooms = new ArrayList<String>();
         while (cursor.moveToNext()){
             Classrooms.add(cursor.getString(0));
@@ -147,8 +147,28 @@ public class DatabaseAccess {
     }
 
 
-    private Cursor readAllDataInTableSubject(){
+    private Cursor __readAllDataInTableSubject(){
         String query = "SELECT label_subject FROM Subject;";
+
+        if(database != null){
+            cursor = database.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
+
+    public Cursor readAllDataInTableSubject(){
+        String query = "SELECT * FROM Subject;";
+
+        if(database != null){
+            cursor = database.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
+
+    public Cursor readAllDataInTableClassroom(){
+        String query = "SELECT * FROM Classroom;";
 
         if(database != null){
             cursor = database.rawQuery(query, null);
@@ -176,6 +196,26 @@ public class DatabaseAccess {
         return cursor;
     }
 
+    public Cursor readAllDataInTableClasses(){
+        String query = "SELECT * FROM Classes;";
+
+        if(database != null){
+            cursor = database.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
+
+    public Cursor readAllDataInTablePresence(){
+        String query = "SELECT * FROM Presence;";
+
+        if(database != null){
+            cursor = database.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
+
     public Cursor readAllDataInTableAccount(){
         String query = "SELECT * FROM Account;";
 
@@ -184,6 +224,8 @@ public class DatabaseAccess {
         }
         return cursor;
     }
+
+
 
     public int getIdFromTableClassroom(String label_classroom){
         if (database != null){
@@ -203,10 +245,10 @@ public class DatabaseAccess {
         return cursor.getInt(0);
     }
 
-    public boolean addNewClassroom(String label_classrom){
+    public boolean addNewClassroom(String label_classroom){
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put("label_classroom", label_classrom);
+        contentValues.put("label_classroom", label_classroom);
         long result = database.insert("Classroom", null, contentValues);
 
         if (result == -1){
