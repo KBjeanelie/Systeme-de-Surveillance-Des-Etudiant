@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_app"
+    android:orientation="vertical"
+    tools:context=".administrateur.AddSubject">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_marginTop="50dp"
+        android:outlineAmbientShadowColor="@color/black"
+        android:background="@drawable/bg_corner">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_gravity="start">
+
+
+            <!-- lastname field -->
+            <EditText
+                android:id="@+id/add_subject_label"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_input"
+                android:drawableStart="@drawable/ic_add"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Libelle"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:autofillHints="name"
+                android:textColorHint="@color/inputTextHintColor"/>
+
+            <include layout="@layout/button_app"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

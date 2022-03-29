@@ -9,59 +9,61 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemeDeSurveillance">
-
+        <activity
+            android:name=".administrateur.AddSubject"
+            android:exported="false" />
+        <activity
+            android:name=".administrateur.AddClassroom"
+            android:exported="false" />
         <activity
             android:name=".enseignant.Profile"
+            android:exported="false"
             android:label="Profile"
-            android:parentActivityName=".enseignant.TeacherDashboard"
-            android:exported="false" />
+            android:parentActivityName=".enseignant.TeacherDashboard" />
         <activity
             android:name=".enseignant.AddAClass"
+            android:exported="false"
             android:label="Ajouter un Cours"
-            android:parentActivityName=".enseignant.TeacherDashboard"
-            android:exported="false" />
+            android:parentActivityName=".enseignant.TeacherDashboard" />
         <activity
             android:name=".enseignant.DisplayStudentsAttendance"
+            android:exported="false"
             android:label="Voir les Presence"
-            android:parentActivityName=".enseignant.TeacherDashboard"
-            android:exported="false" />
-
+            android:parentActivityName=".enseignant.TeacherDashboard" />
         <activity
             android:name=".enseignant.TeacherDashboard"
-            android:label="Dashbaord"
-            android:exported="true">
+            android:exported="true"
+            android:label="Dashbaord">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".administrateur.AddUserAccount"
+            android:exported="false"
             android:label="Ajouter un Compte"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".administrateur.AddTeacher"
+            android:exported="false"
             android:label="Ajouter un Enseignant"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".administrateur.DisplayTeachers"
+            android:exported="false"
             android:label="Liste des Enseignant"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".administrateur.AddStudent"
+            android:exported="false"
             android:label="Ajouter un Etudiant"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".authentification.LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
-
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
@@ -72,12 +74,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
-            android:label="Administration"
-            android:exported="false">
-        </activity>
+            android:exported="false"
+            android:label="Administration" />
     </application>
 
 </manifest>

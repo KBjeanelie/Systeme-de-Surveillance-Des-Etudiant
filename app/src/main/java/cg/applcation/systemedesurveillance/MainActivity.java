@@ -11,7 +11,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import cg.applcation.systemedesurveillance.administrateur.AddClassroom;
 import cg.applcation.systemedesurveillance.administrateur.AddStudent;
+import cg.applcation.systemedesurveillance.administrateur.AddSubject;
 import cg.applcation.systemedesurveillance.administrateur.AddTeacher;
 import cg.applcation.systemedesurveillance.administrateur.AddUserAccount;
 import cg.applcation.systemedesurveillance.administrateur.DisplayTeachers;
@@ -50,6 +52,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, DisplayTeachers.class));
+            }
+        });
+
+        findViewById(R.id.card_add_subject).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AddSubject.class));
+            }
+        });
+
+        findViewById(R.id.card_add_classroom).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AddClassroom.class));
             }
         });
     }

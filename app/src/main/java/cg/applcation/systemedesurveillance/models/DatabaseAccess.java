@@ -199,4 +199,29 @@ public class DatabaseAccess {
         return cursor.getInt(0);
     }
 
+    public boolean addNewClassroom(String label_classrom){
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("label_classroom", label_classrom);
+        long result = database.insert("Classroom", null, contentValues);
+
+        if (result == -1){
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    public boolean addNewSubject(String label_subject){
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("label_subject", label_subject);
+        long result = database.insert("Subject", null, contentValues);
+
+        if (result == -1){
+            return false;
+        }else {
+            return true;
+        }
+    }
 }
