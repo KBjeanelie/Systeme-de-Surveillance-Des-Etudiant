@@ -9,34 +9,59 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemeDeSurveillance">
+
         <activity
             android:name=".enseignant.Profile"
+            android:label="Profile"
+            android:parentActivityName=".enseignant.TeacherDashboard"
             android:exported="false" />
         <activity
-            android:name=".enseignant.TeacherDashboard"
-            android:exported="false" />
-        <activity
-            android:name=".enseignant.AddStudentAttendance"
+            android:name=".enseignant.AddAClass"
+            android:label="Ajouter un Cours"
+            android:parentActivityName=".enseignant.TeacherDashboard"
             android:exported="false" />
         <activity
             android:name=".enseignant.DisplayStudentsAttendance"
+            android:label="Voir les Presence"
+            android:parentActivityName=".enseignant.TeacherDashboard"
             android:exported="false" />
+
+        <activity
+            android:name=".enseignant.TeacherDashboard"
+            android:label="Dashbaord"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".administrateur.AddUserAccount"
+            android:label="Ajouter un Compte"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".administrateur.AddTeacher"
+            android:label="Ajouter un Enseignant"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".administrateur.DisplayTeachers"
+            android:label="Liste des Enseignant"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".administrateur.AddStudent"
+            android:label="Ajouter un Etudiant"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".authentification.LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
@@ -47,14 +72,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="Administration"
+            android:exported="false">
         </activity>
     </application>
 

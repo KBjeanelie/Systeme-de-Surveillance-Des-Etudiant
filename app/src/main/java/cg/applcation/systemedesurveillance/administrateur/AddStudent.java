@@ -48,6 +48,7 @@ public class AddStudent extends AppCompatActivity {
         this.tel = findViewById(R.id.phone_number);
         this.address = findViewById(R.id.address);
         this.sex = findViewById(R.id.sex);
+
         spinner_classroom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -114,16 +115,7 @@ public class AddStudent extends AppCompatActivity {
         });
 
         databaseAccess.closeDatabase();
-        ic_back = findViewById(R.id.icon_back);
 
-        ic_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AddStudent.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
     }
 
     private boolean saveData(Student student){

@@ -15,13 +15,6 @@ public class DisplayStudentsAttendance extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_students_attendance);
 
-        findViewById(R.id.icon_back).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DisplayStudentsAttendance.this, TeacherDashboard.class));
-                finish();
-            }
-        });
 
     }
 }

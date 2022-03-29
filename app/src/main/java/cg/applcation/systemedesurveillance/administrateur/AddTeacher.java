@@ -30,20 +30,6 @@ public class AddTeacher extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_teacher);
 
-        app_bar_title = findViewById(R.id.app_bar_title);
-        app_bar_title.setText("Ajouter un enseignant");
-
-        ic_back = findViewById(R.id.icon_back);
-        ic_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AddTeacher.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-
 
         this.lastname = findViewById(R.id.lastname);
         this.firstname = findViewById(R.id.firstname);

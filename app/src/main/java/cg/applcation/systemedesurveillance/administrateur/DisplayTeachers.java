@@ -36,8 +36,6 @@ public class DisplayTeachers extends AppCompatActivity {
         setContentView(R.layout.activity_display_teachers);
 
         recyclerView = findViewById(R.id.recyclerview_display_teacher);
-        app_bar_title = findViewById(R.id.app_bar_title);
-        app_bar_title.setText("Lister les enseignant");
 
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.openForReadableDatabase();
@@ -49,16 +47,6 @@ public class DisplayTeachers extends AppCompatActivity {
         recyclerView.setAdapter(customeTeacherAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(DisplayTeachers.this));
 
-
-        ic_back = findViewById(R.id.icon_back);
-        ic_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DisplayTeachers.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
     }
 
     public void displayData(){

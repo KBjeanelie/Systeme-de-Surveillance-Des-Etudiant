@@ -8,8 +8,6 @@
     android:orientation="vertical"
     tools:context=".administrateur.AddStudent">
 
-    <include layout="@layout/appbar"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_display_teacher"
         android:layout_width="match_parent"

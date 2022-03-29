@@ -1,138 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/bg_color_app"
     tools:context=".MainActivity">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/appbar_dash" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_add_student"
-        android:layout_width="143dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
-        android:backgroundTint="@color/black"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include">
-
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_add_student"
-            app:tint="@color/white" />
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40sp"
-            android:text="Ajouter un Etudiant"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_add_student"
+                    android:layout_width="143dp"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="56dp"
+                    android:backgroundTint="@color/black"
+                    app:cardCornerRadius="15dp"
+                    android:layout_alignParentStart="true">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_add_teacher"
-        android:layout_width="143dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/white"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add_student"
+                        app:tint="@color/white" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_add_student"
-            app:tint="@color/black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40sp"
+                        android:text="Ajouter un Etudiant"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40sp"
-            android:padding="5dp"
-            android:text="Ajouter un Enseignant"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
 
-    </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_add_teacher"
+                    android:layout_width="143dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="15dp"
+                    android:layout_alignParentEnd="true">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_add_account"
-        android:layout_width="143dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
-        android:backgroundTint="@color/white"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_add_student">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add_student"
+                        app:tint="@color/black" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_account"
-            app:tint="@color/black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40sp"
+                        android:padding="5dp"
+                        android:text="Ajouter un Enseignant"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40sp"
-            android:padding="5dp"
-            android:text="Ajouter un Compte"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
 
-    </androidx.cardview.widget.CardView>
+            </RelativeLayout>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_display_teachers"
-        android:layout_width="143dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/black"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_add_teacher">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_list"
-            app:tint="@color/white" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_add_account"
+                    android:layout_width="143dp"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="16dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="15dp"
+                    android:layout_alignParentStart="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40sp"
-            android:padding="5dp"
-            android:text="Lister les Enseignant"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_account"
+                        app:tint="@color/black" />
 
-    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40sp"
+                        android:padding="5dp"
+                        android:text="Ajouter un Compte"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
+                </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_display_teachers"
+                    android:layout_width="143dp"
+                    android:layout_height="140dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/black"
+                    app:cardCornerRadius="15dp"
+                    android:layout_alignParentEnd="true">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_list"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40sp"
+                        android:padding="5dp"
+                        android:text="Lister les Enseignant"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

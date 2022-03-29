@@ -31,20 +31,6 @@ public class AddUserAccount extends AppCompatActivity {
         databaseAccess = DatabaseAccess.getInstance(AddUserAccount.this);
         databaseAccess.openForWritableDatabase();
 
-        ic_back = findViewById(R.id.icon_back);
-        app_bar_title = findViewById(R.id.app_bar_title);
-
-        app_bar_title.setText("Ajouter un Compte Utilisateur");
-
-        ic_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AddUserAccount.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
         email = findViewById(R.id.teacher_email);
         teacher_tel = findViewById(R.id.phone_number);
         password = findViewById(R.id.input_passwd);
