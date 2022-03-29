@@ -87,20 +87,60 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_input">
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Date : "
+                        android:textSize="20sp"
+                        android:textColor="@color/primary_color"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"/>
 
                     <EditText
-                        android:id="@+id/ed_date"
-                        android:layout_width="match_parent"
+                        android:id="@+id/day"
+                        android:layout_width="75dp"
                         android:layout_height="48dp"
                         android:background="@drawable/bg_input"
                         android:ems="10"
-                        android:hint="Choisir une date"
-                        android:inputType="date"
+                        android:hint="Jour"
+                        android:inputType="number"
                         android:padding="10dp"
                         android:textColor="@color/black"
-                        android:autofillHints="name"
+                        android:autofillHints="phone"
+                        android:layout_toStartOf="@+id/month"
+                        android:layout_marginEnd="5dp"
+                        android:textColorHint="@color/inputTextHintColor"/>
+
+                    <EditText
+                        android:id="@+id/month"
+                        android:layout_width="75dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_input"
+                        android:ems="10"
+                        android:hint="Mois"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:autofillHints="phone"
+                        android:layout_toStartOf="@+id/year"
+                        android:layout_marginEnd="5dp"
+                        android:textColorHint="@color/inputTextHintColor"/>
+
+                    <EditText
+                        android:id="@+id/year"
+                        android:layout_width="75dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_input"
+                        android:ems="10"
+                        android:hint="Année"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:autofillHints="phone"
+                        android:layout_alignParentEnd="true"
                         android:textColorHint="@color/inputTextHintColor"/>
 
                 </RelativeLayout>

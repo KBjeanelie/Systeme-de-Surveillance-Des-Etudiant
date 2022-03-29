@@ -97,6 +97,7 @@ public class AddStudent extends AppCompatActivity {
                     Student student = new Student(lastname, firstname, email, tel, address, sex);
                     int id_classroom = databaseAccess.getIdFromTableClassroom(student_classroom);
                     boolean result = databaseAccess.addStudent(student, id_classroom);
+                    databaseAccess.closeDatabase();
 
                     if(!result){
                         Toast.makeText(getApplicationContext(), "Failed adding Student in database :(", Toast.LENGTH_LONG).show();
@@ -113,8 +114,6 @@ public class AddStudent extends AppCompatActivity {
                 }
             }
         });
-
-        databaseAccess.closeDatabase();
 
     }
 

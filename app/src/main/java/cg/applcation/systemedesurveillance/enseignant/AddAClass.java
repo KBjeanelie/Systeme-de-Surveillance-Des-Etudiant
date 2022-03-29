@@ -13,10 +13,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.SplashScreenActivity;
 import cg.applcation.systemedesurveillance.models.DatabaseAccess;
 
 public class AddAClass extends AppCompatActivity {
@@ -26,7 +28,6 @@ public class AddAClass extends AppCompatActivity {
     ArrayList<String> classrooms = new ArrayList<String>();
     ArrayList<String> subjects = new ArrayList<String>();
 
-    EditText date;
     DatePickerDialog.OnDateSetListener setListener;
 
     String label_subject, label_classroom;
@@ -51,57 +52,48 @@ public class AddAClass extends AppCompatActivity {
         ArrayAdapter<String> adapter_sub = new ArrayAdapter<String>(this, R.layout.spinner_item_subject, R.id.label_subject, subjects);
         spinner_subject.setAdapter(adapter_sub);
 
-        date = findViewById(R.id.ed_date);
-        Calendar calendar = Calendar.getInstance();
-        final int year = calendar.get(Calendar.YEAR);
-        final int[] month = {calendar.get(Calendar.MONTH)};
-        final int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-        date.setOnClickListener(new View.OnClickListener() {
+        spinner_classroom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(AddAClass.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        month[0] += 1;
-                        String newday = year + "-" + month[0] + "-" + day;
-                        date.setText(newday);
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                label_classroom = adapterView.getItemAtPosition(i).toString();
+            }
 
-                    }
-                }, year, month[0], day);
-                datePickerDialog.show();
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
+
+        spinner_subject.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                label_subject = adapterView.getItemAtPosition(i).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        EditText day = findViewById(R.id.day);
+        EditText month = findViewById(R.id.month);
+        EditText year = findViewById(R.id.year);
+
+        String now = year.getText().toString() + "-" + month.getText().toString() + "-" + day.getText().toString();
 
         findViewById(R.id.btn_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                spinner_classroom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        label_classroom = adapterView.getItemAtPosition(i).toString();
-                    }
+                int id_subject= databaseAccess.getIdFromTableSubject(label_subject);
+                int id_classroom = databaseAccess.getIdFromTableClassroom(label_classroom);
+                int current_teacher_id = (int) SplashScreenActivity.current_session.getCurrent_teacher().getId_teacher();
+                boolean check = databaseAccess.addClass(current_teacher_id, id_subject, id_classroom, now);
 
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                });
-
-                spinner_subject.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        label_subject = adapterView.getItemAtPosition(i).toString();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                });
-
-                Toast.makeText(AddAClass.this, label_classroom + " " + label_subject + date.getText().toString(), Toast.LENGTH_LONG).show();
-
+                if (!check){
+                    Toast.makeText(AddAClass.this, "Added failed", Toast.LENGTH_SHORT).show();
+                }
+                Toast.makeText(AddAClass.this, "Added SuccessFully", Toast.LENGTH_SHORT).show();
             }
         });
 
