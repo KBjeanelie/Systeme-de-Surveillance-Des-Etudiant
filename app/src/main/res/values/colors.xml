@@ -8,11 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFF</color>
 
-    <color name="primary_color">#1c8adb</color>
-    <color name="secondary_color">#14629b</color>
-    <color name="gray_app">#747474</color>
-    <color name="bg_color_app">#f7f7f7</color>
-    <color name="inputTextHintColor">#0277BD</color>
-    <color name="red_app">#ff0000</color>
+    <color name="primary_color">#FB6536</color>
+    <color name="default_color">#000000</color>
+    <color name="secondary_color">#121212</color>
+    <color name="card_bg">#1E1A1A</color>
 
 </resources>

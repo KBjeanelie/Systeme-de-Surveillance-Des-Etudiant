@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_color_app"
+    android:background="@color/default_color"
     android:orientation="vertical"
     tools:context=".administrateur.AddStudent">
 
@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:outlineAmbientShadowColor="@color/black"
         android:background="@drawable/bg_corner">
 
         <LinearLayout
@@ -37,9 +36,10 @@
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
-                android:textColor="@color/primary_color"
+                android:textColor="@color/white"
                 android:autofillHints="emailAddress"
-                android:textColorHint="@color/inputTextHintColor" />
+                android:textColorHint="@color/white"
+                android:drawableTint="@color/primary_color"/>
 
             <!-- phone number field -->
             <EditText
@@ -54,9 +54,10 @@
                 android:hint="Numéro de Téléphone"
                 android:inputType="phone"
                 android:padding="10dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:autofillHints="phone"
-                android:textColorHint="@color/inputTextHintColor"/>
+                android:textColorHint="@color/white"
+                android:drawableTint="@color/primary_color"/>
 
             <!-- password field -->
             <EditText
@@ -71,9 +72,10 @@
                 android:hint="Mot de passe"
                 android:inputType="textPassword"
                 android:padding="10dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:autofillHints="password"
-                android:textColorHint="@color/inputTextHintColor" />
+                android:textColorHint="@color/white"
+                android:drawableTint="@color/primary_color"/>
 
 
             <include layout="@layout/button_app"/>

@@ -4,19 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_color_app"
+    android:background="@color/default_color"
     tools:context=".SplashScreenActivity">
-
-    <ImageView
-        android:id="@+id/splash_screen_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="108dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/splash_screen_title"
-        app:srcCompat="@drawable/logo_three" />
 
     <TextView
         android:id="@+id/splash_screen_title"
@@ -34,6 +23,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="177dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="208dp"
+        android:src="@drawable/giphy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splash_screen_title" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -41,24 +39,11 @@
         android:layout_marginBottom="16dp"
         android:gravity="center"
         android:text="@string/app_slogon"
-        android:textColor="@color/gray_app"
+        android:textColor="@color/primary_color"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
-        android:progressBackgroundTint="@color/primary_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/splash_screen_image" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

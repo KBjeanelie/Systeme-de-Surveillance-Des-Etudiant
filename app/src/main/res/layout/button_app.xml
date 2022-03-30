@@ -14,7 +14,7 @@
         android:id="@+id/btn_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Ajouter"
         android:layout_gravity="center"
         android:textAlignment="center"
         android:textSize="16sp"
