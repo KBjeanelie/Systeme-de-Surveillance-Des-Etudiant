@@ -62,7 +62,10 @@ public class LoginActivity extends AppCompatActivity {
 
                                 for (Teacher t: teachers) {
                                     if (t.getId_teacher() == user.getId_teacher()){
+
                                         SplashScreenActivity.current_session = new Session(true, t, user);
+                                        SplashScreenActivity.current_session.getAllClasses(LoginActivity.this, databaseAccess);
+
                                         startActivity(new Intent(LoginActivity.this, TeacherDashboard.class));
                                         finish();
                                         break;
@@ -70,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             }
                         }
+                        Toast.makeText(LoginActivity.this, "Username or Password Incorect", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -81,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         ArrayList<Teacher> teachers = new ArrayList<Teacher>();
         if (cursor.getCount() == 0)
         {
-            Toast.makeText(getApplicationContext(), "No data found :(", Toast.LENGTH_SHORT).show();
+            return null;
         }else{
             while (cursor.moveToNext()){
                 Teacher teacher = new Teacher(cursor.getString(1), cursor.getString(2), cursor.getString(3),
@@ -100,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
         ArrayList<UserAccount> accounts = new ArrayList<UserAccount>();
         if (cursor.getCount() == 0)
         {
-            Toast.makeText(getApplicationContext(), "No data found :(", Toast.LENGTH_SHORT).show();
+            return null;
         }else{
             while (cursor.moveToNext()){
                 UserAccount userAccount = new UserAccount(cursor.getString(0), cursor.getString(1));

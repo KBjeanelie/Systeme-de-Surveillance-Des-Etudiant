@@ -41,23 +41,6 @@
                 android:textColorHint="@color/white"
                 android:drawableTint="@color/primary_color"/>
 
-            <!-- phone number field -->
-            <EditText
-                android:id="@+id/phone_number"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_input"
-                android:drawableStart="@drawable/ic_phone"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:hint="Numéro de Téléphone"
-                android:inputType="phone"
-                android:padding="10dp"
-                android:textColor="@color/white"
-                android:autofillHints="phone"
-                android:textColorHint="@color/white"
-                android:drawableTint="@color/primary_color"/>
 
             <!-- password field -->
             <EditText

@@ -1,10 +1,12 @@
 package cg.applcation.systemedesurveillance.customadapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.SplashScreenActivity;
+import cg.applcation.systemedesurveillance.enseignant.ShowPresence;
 import cg.applcation.systemedesurveillance.models.Classes;
 import cg.applcation.systemedesurveillance.models.Classroom;
 import cg.applcation.systemedesurveillance.models.Subject;
@@ -42,9 +46,39 @@ public class CustomesClassesAdapter extends RecyclerView.Adapter<CustomesClasses
     public void onBindViewHolder(@NonNull CustomesClassesAdapter.MyViewHolder holder, int position) {
         int id_classroom = classes.get(position).getId_classroom();
         int id_subject = classes.get(position).getId_subject();
-        holder.date_of_class.setText(classes.get(position).getDate_of_classes());
-        holder.label_subject.setText(String.valueOf(id_subject));
-        holder.label_classroom.setText(String.valueOf(id_classroom));
+        int id_teacher = classes.get(position).getId_teacher();
+        int id_classes = classes.get(position).getId_classes();
+        String date_of_classes = classes.get(position).getDate_of_classes();
+        holder.date_of_class.setText(date_of_classes);
+
+        for (int i = 0; i < classrooms.size(); i++) {
+            if (classrooms.get(i).getId_classroom() == id_classroom){
+                holder.label_classroom.setText(classrooms.get(i).getLabel_classroom());
+                break;
+            }
+        }
+
+        for (int i = 0; i < subjects.size(); i++) {
+            if (subjects.get(i).getId_subject() == id_subject){
+                holder.label_subject.setText(subjects.get(i).getLabel());
+                break;
+            }
+        }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, holder.label_subject.getText().toString() + "was clicked", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(context, ShowPresence.class);
+                intent.putExtra("id_classes", String.valueOf(id_classes));
+                intent.putExtra("id_teacher", String.valueOf(id_teacher));
+                intent.putExtra("id_subject", String.valueOf(id_subject));
+                intent.putExtra("id_classroom", String.valueOf(id_classroom));
+                intent.putExtra("date_of_classes", date_of_classes);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     /**
@@ -62,8 +96,9 @@ public class CustomesClassesAdapter extends RecyclerView.Adapter<CustomesClasses
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             date_of_class = itemView.findViewById(R.id.class2_txt);
-            label_classroom = itemView.findViewById(R.id.class_s2_txt);
-            label_subject = itemView.findViewById(R.id.class_cl2_txt);
+            label_classroom = itemView.findViewById(R.id.class_cl2_txt);
+            label_subject = itemView.findViewById(R.id.class_s2_txt);
+
         }
     }
 }

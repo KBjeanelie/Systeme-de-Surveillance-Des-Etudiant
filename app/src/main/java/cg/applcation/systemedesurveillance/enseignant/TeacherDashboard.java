@@ -18,6 +18,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.SplashScreenActivity;
 import cg.applcation.systemedesurveillance.authentification.LoginActivity;
 import cg.applcation.systemedesurveillance.customadapter.CustomesClassesAdapter;
 import cg.applcation.systemedesurveillance.models.Classes;
@@ -30,7 +31,7 @@ public class TeacherDashboard extends AppCompatActivity {
     RecyclerView recyclerView;
     CustomesClassesAdapter customesClassesAdapter;
 
-    ArrayList<Classes> classes = new ArrayList<Classes>();
+    ArrayList<Classes> classes;
     ArrayList<Classroom> classrooms;
     ArrayList<Subject> subjects;
 
@@ -47,7 +48,8 @@ public class TeacherDashboard extends AppCompatActivity {
         classrooms = getClassrooms(TeacherDashboard.this, databaseAccess);
         subjects = getSubject(TeacherDashboard.this, databaseAccess);
 
-        storeData();
+        classes = SplashScreenActivity.current_session.getAllClassesOfSingleTeacher(
+                (int) SplashScreenActivity.current_session.getCurrent_teacher().getId_teacher());
 
 
         customesClassesAdapter = new CustomesClassesAdapter(TeacherDashboard.this, classes, classrooms, subjects);
@@ -87,21 +89,6 @@ public class TeacherDashboard extends AppCompatActivity {
         }
     }
 
-
-    public void storeData(){
-        Cursor cursor = databaseAccess.readAllDataInTableClasses();
-
-        if (cursor.getCount() == 0){
-            Toast.makeText(getApplicationContext(), "No data found", Toast.LENGTH_LONG).show();
-        }else {
-            while (cursor.moveToNext()){
-                Classes single_classes = new Classes(cursor.getInt(0), cursor.getInt(1), cursor.getInt(2), cursor.getInt(3),
-                        cursor.getString(4));
-
-                classes.add(single_classes);
-            }
-        }
-    }
 
     public static ArrayList<Classroom> getClassrooms(Context context, DatabaseAccess db){
         Cursor cursor = db.readAllDataInTableClassroom();

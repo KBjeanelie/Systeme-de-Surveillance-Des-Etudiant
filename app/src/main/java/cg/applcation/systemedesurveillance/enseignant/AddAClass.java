@@ -28,8 +28,6 @@ public class AddAClass extends AppCompatActivity {
     ArrayList<String> classrooms = new ArrayList<String>();
     ArrayList<String> subjects = new ArrayList<String>();
 
-    DatePickerDialog.OnDateSetListener setListener;
-
     String label_subject, label_classroom;
 
     @Override
@@ -80,22 +78,34 @@ public class AddAClass extends AppCompatActivity {
         EditText month = findViewById(R.id.month);
         EditText year = findViewById(R.id.year);
 
-        String now = year.getText().toString() + "-" + month.getText().toString() + "-" + day.getText().toString();
 
         findViewById(R.id.btn_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int id_subject= databaseAccess.getIdFromTableSubject(label_subject);
-                int id_classroom = databaseAccess.getIdFromTableClassroom(label_classroom);
-                int current_teacher_id = (int) SplashScreenActivity.current_session.getCurrent_teacher().getId_teacher();
-                boolean check = databaseAccess.addClass(current_teacher_id, id_subject, id_classroom, now);
+                int d = Integer.parseInt(day.getText().toString());
+                int m = Integer.parseInt(month.getText().toString());
+                int y = Integer.parseInt(year.getText().toString());
 
-                if (!check){
-                    Toast.makeText(AddAClass.this, "Added failed", Toast.LENGTH_SHORT).show();
+                if (d < 0 || d > 30 || m > 31 || m < 0 || y > 2022 || y < 2020){
+                    Toast.makeText(getApplicationContext(), "Date invalide", Toast.LENGTH_LONG).show();
+                }else {
+                    String now = String.valueOf(d) + "/" + String.valueOf(m) + "/" + String.valueOf(y);
+                    int id_subject= databaseAccess.getIdFromTableSubject(label_subject);
+                    int id_classroom = databaseAccess.getIdFromTableClassroom(label_classroom);
+                    int current_teacher_id = (int) SplashScreenActivity.current_session.getCurrent_teacher().getId_teacher();
+                    boolean check = databaseAccess.addClass(current_teacher_id, id_subject, id_classroom, now);
+
+                    if (!check){
+                        Toast.makeText(AddAClass.this, "Added failed", Toast.LENGTH_SHORT).show();
+                    }
+                    Toast.makeText(AddAClass.this, "Added SuccessFully", Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(AddAClass.this, "Added SuccessFully", Toast.LENGTH_SHORT).show();
             }
         });
+
+        day.setText("");
+        month.setText("");
+        year.setText("");
 
     }
 

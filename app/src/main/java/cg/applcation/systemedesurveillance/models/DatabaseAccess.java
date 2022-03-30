@@ -270,4 +270,35 @@ public class DatabaseAccess {
             return true;
         }
     }
+
+    public String getSingleLabelFromClassroom(String id_classroom)
+    {
+        if (database != null){
+            cursor = database.query("Classroom", new String[]{"label_classroom"}, "id_classroom=?",
+                    new String[]{id_classroom}, null, null, null);
+        }
+        cursor.moveToNext();
+        return cursor.getString(0);
+    }
+
+    public String getSingleLabelFromSubject(String id_subject)
+    {
+        if (database != null){
+            cursor = database.query("Subject", new String[]{"label_subject"}, "id_subject=?",
+                    new String[]{id_subject}, null, null, null);
+        }
+        cursor.moveToNext();
+        return cursor.getString(0);
+    }
+
+    public String getFullNameFromTeacher(String id_teacher)
+    {
+        if (database != null){
+            cursor = database.query("Teacher", new String[]{"teacher_lastname, teacher_firstname"}, "id_teacher=?",
+                    new String[]{id_teacher}, null, null, null);
+        }
+        cursor.moveToNext();
+        return cursor.getString(0) + " " + cursor.getString(1);
+    }
+
 }

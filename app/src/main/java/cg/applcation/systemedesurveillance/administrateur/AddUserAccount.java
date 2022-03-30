@@ -32,7 +32,6 @@ public class AddUserAccount extends AppCompatActivity {
         databaseAccess.openForWritableDatabase();
 
         email = findViewById(R.id.teacher_email);
-        teacher_tel = findViewById(R.id.phone_number);
         password = findViewById(R.id.input_passwd);
 
 
@@ -40,14 +39,10 @@ public class AddUserAccount extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String email = AddUserAccount.this.email.getText().toString().trim();
-                String tel = AddUserAccount.this.teacher_tel.getText().toString().trim();
                 String password = AddUserAccount.this.password.getText().toString().trim();
 
                 if(email.matches("")){
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entré un email", Toast.LENGTH_LONG).show();
-                }
-                else if(tel.matches("")){
-                    Toast.makeText(getApplicationContext(), "Vous n'avez pas entré un numero de telephone", Toast.LENGTH_LONG).show();
                 }
                 else if(password.matches("")){
                     Toast.makeText(getApplicationContext(), "Vous n'avez pas entré un mot de passe", Toast.LENGTH_LONG).show();

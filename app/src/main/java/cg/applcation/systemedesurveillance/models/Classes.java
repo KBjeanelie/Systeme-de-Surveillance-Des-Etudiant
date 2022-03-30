@@ -4,15 +4,15 @@ public class Classes {
 
     private int id_classes;
     private int id_teacher;
-    private int id_classroom;
     private int id_subject;
+    private int id_classroom;
     private String date_of_classes;
 
-    public Classes(int id_classes, int id_teacher, int id_classroom, int id_subject, String date_of_classes) {
+    public Classes(int id_classes, int id_teacher, int id_subject, int id_classroom, String date_of_classes) {
         this.id_classes = id_classes;
         this.id_teacher = id_teacher;
-        this.id_classroom = id_classroom;
         this.id_subject = id_subject;
+        this.id_classroom = id_classroom;
         this.date_of_classes = date_of_classes;
     }
 

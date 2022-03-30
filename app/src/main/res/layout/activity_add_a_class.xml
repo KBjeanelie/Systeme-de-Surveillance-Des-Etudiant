@@ -108,11 +108,11 @@
                         android:hint="Jour"
                         android:inputType="number"
                         android:padding="10dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:autofillHints="phone"
                         android:layout_toStartOf="@+id/month"
                         android:layout_marginEnd="5dp"
-                        android:textColorHint="@color/inputTextHintColor"/>
+                        android:textColorHint="@color/white"/>
 
                     <EditText
                         android:id="@+id/month"
@@ -123,11 +123,11 @@
                         android:hint="Mois"
                         android:inputType="number"
                         android:padding="10dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:autofillHints="phone"
                         android:layout_toStartOf="@+id/year"
                         android:layout_marginEnd="5dp"
-                        android:textColorHint="@color/inputTextHintColor"/>
+                        android:textColorHint="@color/white"/>
 
                     <EditText
                         android:id="@+id/year"
@@ -138,10 +138,10 @@
                         android:hint="Année"
                         android:inputType="number"
                         android:padding="10dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:autofillHints="phone"
                         android:layout_alignParentEnd="true"
-                        android:textColorHint="@color/inputTextHintColor"/>
+                        android:textColorHint="@color/white"/>
 
                 </RelativeLayout>
 

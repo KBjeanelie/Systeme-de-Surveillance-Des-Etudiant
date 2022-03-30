@@ -9,17 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemeDeSurveillance">
-
+        <activity
+            android:name=".enseignant.AddStudencePresence"
+            android:label="Ajouter une Presence"
+            android:parentActivityName=".enseignant.ShowPresence"
+            android:exported="false" />
         <activity
             android:name=".enseignant.ShowPresence"
+            android:exported="false"
             android:label="Liste de Presence"
-            android:parentActivityName=".enseignant.TeacherDashboard"
-            android:exported="false" />
-        <activity
-            android:name=".enseignant.DisplayAllClasses"
-            android:label="Listes des Cours"
-            android:parentActivityName=".enseignant.TeacherDashboard"
-            android:exported="false" />
+            android:parentActivityName=".enseignant.TeacherDashboard" />
         <activity
             android:name=".administrateur.AddSubject"
             android:exported="false"
@@ -31,26 +30,14 @@
             android:label="Ajouter une classe"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".enseignant.Profile"
-            android:exported="false"
-            android:label="Profile"
-            android:parentActivityName=".enseignant.TeacherDashboard" />
-        <activity
             android:name=".enseignant.AddAClass"
             android:exported="false"
             android:label="Ajouter un Cours"
             android:parentActivityName=".enseignant.TeacherDashboard" />
         <activity
-            android:name=".enseignant.DisplayStudentsAttendance"
-            android:exported="false"
-            android:label="Voir les Presence"
-            android:parentActivityName=".enseignant.TeacherDashboard" />
-        <activity
             android:name=".enseignant.TeacherDashboard"
             android:exported="true"
-            android:label="Dashbaord">
-        </activity>
-
+            android:label="Dashbaord"></activity>
         <activity
             android:name=".administrateur.AddUserAccount"
             android:exported="false"

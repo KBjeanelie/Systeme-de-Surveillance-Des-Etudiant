@@ -39,6 +39,7 @@
         <entry key="app/src/main/res/layout/button_app.xml" value="0.25" />
         <entry key="app/src/main/res/layout/class_item.xml" value="0.22" />
         <entry key="app/src/main/res/layout/spinner_item_classroom.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/spinner_item_subject.xml" value="0.2" />
         <entry key="app/src/main/res/layout/student_attendance_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/teacher_card_item.xml" value="0.25" />
         <entry key="app/src/main/res/menu/menu_app.xml" value="0.25" />
