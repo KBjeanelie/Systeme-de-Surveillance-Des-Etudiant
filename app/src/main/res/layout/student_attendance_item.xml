@@ -30,6 +30,7 @@
             android:layout_toEndOf="@+id/img_student">
 
             <TextView
+                android:id="@+id/student_fullname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Angelina jolie"

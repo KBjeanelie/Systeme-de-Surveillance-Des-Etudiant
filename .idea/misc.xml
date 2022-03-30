@@ -19,6 +19,7 @@
         <entry key="app/src/main/res/layout-v28/activity_add_classroom.xml" value="0.12454710144927536" />
         <entry key="app/src/main/res/layout/activity_add_a_class.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_classroom.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_add_studence_presence.xml" value="0.11015412511332728" />
         <entry key="app/src/main/res/layout/activity_add_student.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_add_student_attendance.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_subject.xml" value="0.22" />
