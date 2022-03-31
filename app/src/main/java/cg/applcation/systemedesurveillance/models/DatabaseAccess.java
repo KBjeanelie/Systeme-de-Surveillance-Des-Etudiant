@@ -301,4 +301,19 @@ public class DatabaseAccess {
         return cursor.getString(0) + " " + cursor.getString(1);
     }
 
+    public ArrayList<String> getStudentsFullNames(String id_classroom)
+    {
+        String query = "SELECT student_lastname, student_firstname FROM Student WHERE id_classroom = " + id_classroom;
+        ArrayList<String> students = new ArrayList<String>();
+
+        if(database != null){
+            cursor = database.rawQuery(query, null);
+        }
+
+        while (cursor.moveToNext()){
+            students.add(cursor.getString(0) + " " + cursor.getString(1));
+        }
+        return students;
+    }
+
 }

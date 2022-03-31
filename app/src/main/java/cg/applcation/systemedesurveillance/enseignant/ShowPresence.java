@@ -42,7 +42,9 @@ public class ShowPresence extends AppCompatActivity {
         findViewById(R.id.add_student_presence).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ShowPresence.this, AddStudencePresence.class));
+                Intent intent = new Intent(ShowPresence.this, AddStudencePresence.class);
+                intent.putExtra("id_classroom", id_classroom);
+                startActivity(intent);
             }
         });
 
