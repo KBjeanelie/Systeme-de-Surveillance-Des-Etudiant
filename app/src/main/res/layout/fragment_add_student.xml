@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/default_color"
     android:orientation="vertical"
-    tools:context=".administrateur.AddStudent">
+    tools:context=".administrateur.AddStudentFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -136,8 +137,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@+id/t2"
-                    android:spinnerMode="dropdown"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    android:spinnerMode="dropdown" />
 
             </RelativeLayout>
 
@@ -166,4 +166,4 @@
 
     </ScrollView>
 
-</LinearLayout>
+</FrameLayout>

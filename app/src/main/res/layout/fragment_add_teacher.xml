@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/default_color"
     android:orientation="vertical"
-    tools:context=".administrateur.AddStudent">
+    tools:context=".administrateur.AddTeacherFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,13 +49,13 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/bg_input"
                 android:drawableStart="@drawable/ic_person"
-                android:drawableTint="@color/primary_color"
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Prénom"
                 android:inputType="text"
                 android:padding="10dp"
                 android:textColor="@color/white"
+                android:drawableTint="@color/primary_color"
                 android:autofillHints="name"
                 android:textColorHint="@color/white" />
 
@@ -66,7 +67,6 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/bg_input"
                 android:drawableStart="@drawable/ic_email"
-                android:drawableTint="@color/primary_color"
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Email"
@@ -74,7 +74,44 @@
                 android:padding="10dp"
                 android:textColor="@color/white"
                 android:autofillHints="emailAddress"
-                android:textColorHint="@color/white" />
+                android:textColorHint="@color/white"
+                android:drawableTint="@color/primary_color"/>
+
+            <!-- job function field -->
+            <EditText
+                android:id="@+id/job_function"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_input"
+                android:drawableStart="@drawable/ic_job"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Profession"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:autofillHints="emailAddress"
+                android:textColorHint="@color/white"
+                android:drawableTint="@color/primary_color"/>
+
+            <!-- job function field -->
+            <EditText
+                android:id="@+id/work_at"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_input"
+                android:drawableStart="@drawable/ic_work"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Lieux de Travail"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:autofillHints="emailAddress"
+                android:textColorHint="@color/white"
+                android:drawableTint="@color/primary_color"/>
 
             <!-- phone number field -->
             <EditText
@@ -84,13 +121,13 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/bg_input"
                 android:drawableStart="@drawable/ic_phone"
-                android:drawableTint="@color/primary_color"
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Numéro de Téléphone"
                 android:inputType="phone"
                 android:padding="10dp"
                 android:textColor="@color/white"
+                android:drawableTint="@color/primary_color"
                 android:autofillHints="phone"
                 android:textColorHint="@color/white"/>
 
@@ -102,44 +139,15 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/bg_input"
                 android:drawableStart="@drawable/ic_address"
-                android:drawableTint="@color/primary_color"
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Adresse"
                 android:inputType="text"
                 android:padding="10dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:autofillHints="postalAddress"
-                android:textColorHint="@color/white" />
-
-            <!-- classroom field -->
-            <RelativeLayout
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_input"
-                android:padding="10dp">
-
-                <TextView
-                    android:id="@+id/t2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Choisir Classe"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/white"
-                    android:fontFamily="sans-serif"
-                    android:textSize="18sp"
-                    android:layout_alignParentStart="true"/>
-
-                <Spinner
-                    android:id="@+id/ads_id_classroom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/t2"
-                    android:spinnerMode="dropdown"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-            </RelativeLayout>
+                android:textColorHint="@color/white"
+                android:drawableTint="@color/primary_color"/>
 
             <!-- sex field -->
             <EditText
@@ -149,7 +157,6 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/bg_input"
                 android:drawableStart="@drawable/ic_gender"
-                android:drawableTint="@color/primary_color"
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Sexe"
@@ -157,7 +164,8 @@
                 android:padding="10dp"
                 android:textColor="@color/white"
                 android:autofillHints=""
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/white"
+                android:drawableTint="@color/primary_color"/>
 
             <include layout="@layout/button_app"/>
 
@@ -166,4 +174,4 @@
 
     </ScrollView>
 
-</LinearLayout>
+</FrameLayout>
