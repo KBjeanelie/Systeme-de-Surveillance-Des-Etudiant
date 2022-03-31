@@ -17,6 +17,9 @@ import cg.applcation.systemedesurveillance.models.Student;
 public class CustomesShowPresenceAdapter extends RecyclerView.Adapter<CustomesShowPresenceAdapter.MyViewHolder> {
 
     private Context context;
+    private int id_classes;
+    ArrayList<Student> students;
+
 
 
     @NonNull

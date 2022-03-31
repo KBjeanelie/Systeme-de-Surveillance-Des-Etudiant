@@ -39,17 +39,23 @@ public class TeacherDashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_dashboard);
-
-        recyclerView = findViewById(R.id.recyclerview_display_classes);
+        SplashScreenActivity.current_session.checkSession(TeacherDashboard.this);
 
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.openForReadableDatabase();
+        classes = SplashScreenActivity.current_session.getAllClassesOfSingleTeacher(
+                (int) SplashScreenActivity.current_session.getCurrent_teacher().getId_teacher());
+
+
+        recyclerView = findViewById(R.id.recyclerview_display_classes);
+
 
         classrooms = getClassrooms(TeacherDashboard.this, databaseAccess);
         subjects = getSubject(TeacherDashboard.this, databaseAccess);
 
         classes = SplashScreenActivity.current_session.getAllClassesOfSingleTeacher(
                 (int) SplashScreenActivity.current_session.getCurrent_teacher().getId_teacher());
+
 
 
         customesClassesAdapter = new CustomesClassesAdapter(TeacherDashboard.this, classes, classrooms, subjects);
@@ -81,6 +87,8 @@ public class TeacherDashboard extends AppCompatActivity {
                 // EX : call intent if you want to swich to other activity
                 return true;
             case R.id.logout:
+                SplashScreenActivity.current_session.setAuth(false);
+                SplashScreenActivity.current_session.logout();
                 startActivity(new Intent(TeacherDashboard.this, LoginActivity.class));
                 finish();
                 return true;
@@ -126,4 +134,10 @@ public class TeacherDashboard extends AppCompatActivity {
         return subjects;
     }
 
+
+    public void update()
+    {
+        classes = SplashScreenActivity.current_session.getAllClassesOfSingleTeacher(
+                (int) SplashScreenActivity.current_session.getCurrent_teacher().getId_teacher());
+    }
 }

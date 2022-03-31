@@ -2,6 +2,7 @@ package cg.applcation.systemedesurveillance.models;
 
 public class Student {
 
+    private int id_student;
     private String lastname;
     private String firstname;
     private String email;
@@ -9,6 +10,13 @@ public class Student {
     private String address;
     private String sex;
 
+    public int getId_student() {
+        return id_student;
+    }
+
+    public void setId_student(int id_student) {
+        this.id_student = id_student;
+    }
 
     public Student(String lastname, String firstname, String email, String tel, String address, String sex) {
         this.lastname = lastname;

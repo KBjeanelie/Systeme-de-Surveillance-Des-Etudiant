@@ -8,7 +8,9 @@ import android.os.Handler;
 
 import cg.applcation.systemedesurveillance.authentification.LoginActivity;
 import cg.applcation.systemedesurveillance.authentification.Session;
+import cg.applcation.systemedesurveillance.enseignant.AddStudencePresence;
 import cg.applcation.systemedesurveillance.enseignant.ShowPresence;
+import cg.applcation.systemedesurveillance.enseignant.TeacherDashboard;
 import cg.applcation.systemedesurveillance.models.Teacher;
 import cg.applcation.systemedesurveillance.models.UserAccount;
 
@@ -32,7 +34,6 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void run() {
 
                 Intent i = new Intent(SplashScreenActivity.this, LoginActivity.class);
-
                 startActivity(i);
 
                 finish();

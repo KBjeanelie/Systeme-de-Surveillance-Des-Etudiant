@@ -58,7 +58,6 @@ public class AddUserAccount extends AppCompatActivity {
                     }else {
                         Toast.makeText(getApplicationContext(), "Added successfully :)", Toast.LENGTH_LONG).show();
                         AddUserAccount.this.email.setText("");
-                        AddUserAccount.this.teacher_tel.setText("");
                         AddUserAccount.this.password.setText("");
                     }
 

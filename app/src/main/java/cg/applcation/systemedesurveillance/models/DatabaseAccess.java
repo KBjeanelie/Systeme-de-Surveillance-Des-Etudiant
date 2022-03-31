@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class DatabaseAccess {
 
-    private SQLiteOpenHelper sqLiteOpenHelper;
+    private final SQLiteOpenHelper sqLiteOpenHelper;
     private SQLiteDatabase database;
     private static DatabaseAccess  newInstance;
     Cursor cursor = null;
@@ -177,6 +177,16 @@ public class DatabaseAccess {
         return cursor;
     }
 
+    public Cursor readAllDataInTableStudent(){
+        String query = "SELECT * FROM Student;";
+
+        if(database != null){
+            cursor = database.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
+
     public ArrayList<String> getAllDataInTableSubject(){
         cursor = __readAllDataInTableSubject();
         ArrayList<String> Subjects = new ArrayList<String>();
@@ -315,5 +325,9 @@ public class DatabaseAccess {
         }
         return students;
     }
+
+
+
+
 
 }

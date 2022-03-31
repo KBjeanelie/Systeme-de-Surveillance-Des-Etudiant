@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.SplashScreenActivity;
 import cg.applcation.systemedesurveillance.administrateur.AddSubject;
 import cg.applcation.systemedesurveillance.models.DatabaseAccess;
 import cg.applcation.systemedesurveillance.models.Student;
@@ -27,6 +28,7 @@ public class AddStudencePresence extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_studence_presence);
+        SplashScreenActivity.current_session.checkSession(AddStudencePresence.this);
 
         getClassroomFromIntent();
 

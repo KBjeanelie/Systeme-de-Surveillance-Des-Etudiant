@@ -7,20 +7,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.SplashScreenActivity;
 import cg.applcation.systemedesurveillance.models.DatabaseAccess;
+import cg.applcation.systemedesurveillance.models.Student;
 
 public class ShowPresence extends AppCompatActivity {
 
     TextView classroom, subject, teacher_fullName, date_of_classes;
     String id_classes, id_teacher, id_subject, id_classroom;
     DatabaseAccess databaseAccess;
+    ArrayList<Student> students;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_presence);
+        SplashScreenActivity.current_session.checkSession(ShowPresence.this);
+
+
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.openForReadableDatabase();
 
@@ -34,6 +42,7 @@ public class ShowPresence extends AppCompatActivity {
         String cl = databaseAccess.getSingleLabelFromClassroom(id_classroom);
         String sub = databaseAccess.getSingleLabelFromSubject(id_subject);
         String f = databaseAccess.getFullNameFromTeacher(id_teacher);
+
 
         classroom.setText(cl);
         subject.setText(sub);
@@ -63,4 +72,6 @@ public class ShowPresence extends AppCompatActivity {
             date_of_classes.setText(d);
         }
     }
+
+
 }
