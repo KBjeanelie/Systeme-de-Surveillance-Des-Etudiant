@@ -3,6 +3,7 @@ package cg.applcation.systemedesurveillance.administrateur;
 import android.database.Cursor;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +28,7 @@ public class DisplayTeacherFragment extends Fragment {
     RecyclerView recyclerView;
     ArrayList<Teacher> teachers;
     CustomeTeacherAdapter customeTeacherAdapter;
+    private Toolbar toolbar;
 
     public DisplayTeacherFragment() {
         // Required empty public constructor

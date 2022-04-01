@@ -1,21 +1,20 @@
 package cg.applcation.systemedesurveillance.enseignant;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import android.app.DatePickerDialog;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
+
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.SplashScreenActivity;
@@ -29,6 +28,7 @@ public class AddAClass extends AppCompatActivity {
     ArrayList<String> subjects = new ArrayList<String>();
 
     String label_subject, label_classroom;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,8 @@ public class AddAClass extends AppCompatActivity {
         setContentView(R.layout.activity_add_a_class);
         SplashScreenActivity.current_session.checkSession(AddAClass.this);
 
+        toolbar = findViewById(R.id.toolbar_id);
+        toolbar.setTitle("Ajouter un Cours");
         spinner_classroom = findViewById(R.id.ads_id_classroom);
         spinner_subject = findViewById(R.id.ads_id_subject);
 

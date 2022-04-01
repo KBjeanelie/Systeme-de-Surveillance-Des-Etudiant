@@ -1,7 +1,7 @@
 package cg.applcation.systemedesurveillance.enseignant;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,9 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -19,7 +16,6 @@ import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.SplashScreenActivity;
-import cg.applcation.systemedesurveillance.authentification.LoginActivity;
 import cg.applcation.systemedesurveillance.customadapter.CustomesClassesAdapter;
 import cg.applcation.systemedesurveillance.models.Classes;
 import cg.applcation.systemedesurveillance.models.Classroom;
@@ -30,6 +26,7 @@ public class TeacherDashboard extends AppCompatActivity {
     DatabaseAccess databaseAccess;
     RecyclerView recyclerView;
     CustomesClassesAdapter customesClassesAdapter;
+    private Toolbar toolbar;
 
     ArrayList<Classes> classes;
     ArrayList<Classroom> classrooms;
@@ -48,7 +45,8 @@ public class TeacherDashboard extends AppCompatActivity {
 
 
         recyclerView = findViewById(R.id.recyclerview_display_classes);
-
+        toolbar = findViewById(R.id.toolbar_id);
+        toolbar.setTitle("Dashboard");
 
         classrooms = getClassrooms(TeacherDashboard.this, databaseAccess);
         subjects = getSubject(TeacherDashboard.this, databaseAccess);

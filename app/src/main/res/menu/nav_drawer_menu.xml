@@ -4,6 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home_id"
+            android:title="Accueil" />
+    </group>
 
     <item android:title="Gestion Compte">
         <menu>

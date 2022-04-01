@@ -2,6 +2,7 @@ package cg.applcation.systemedesurveillance.administrateur;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -29,6 +30,7 @@ public class AddStudentFragment extends Fragment {
 
     DatabaseAccess databaseAccess;
     ArrayList<String> classrooms = new ArrayList<String>();
+    private Toolbar toolbar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

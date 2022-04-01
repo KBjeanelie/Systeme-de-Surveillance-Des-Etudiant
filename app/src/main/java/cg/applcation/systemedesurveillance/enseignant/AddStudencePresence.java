@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
-
+import androidx.appcompat.widget.Toolbar;
 import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
@@ -21,6 +21,7 @@ public class AddStudencePresence extends AppCompatActivity {
     Spinner spinner;
     ArrayList<String> students;
     String fullName, id_classroom;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,8 @@ public class AddStudencePresence extends AppCompatActivity {
         databaseAccess = DatabaseAccess.getInstance(AddStudencePresence.this);
         databaseAccess.openForWritableDatabase();
 
+        toolbar = findViewById(R.id.toolbar_id);
+        toolbar.setTitle("Ajouter Presence");
         spinner = findViewById(R.id.spinner_list_student);
 
         students = databaseAccess.getStudentsFullNames(id_classroom);

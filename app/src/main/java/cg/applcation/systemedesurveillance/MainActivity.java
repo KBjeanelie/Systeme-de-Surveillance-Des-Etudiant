@@ -28,6 +28,7 @@ import cg.applcation.systemedesurveillance.administrateur.DisplayClassroomFragme
 import cg.applcation.systemedesurveillance.administrateur.DisplayStudentFragment;
 import cg.applcation.systemedesurveillance.administrateur.DisplaySubjectFragment;
 import cg.applcation.systemedesurveillance.administrateur.DisplayTeacherFragment;
+import cg.applcation.systemedesurveillance.administrateur.MainFragment;
 import cg.applcation.systemedesurveillance.administrateur.ProfileFragment;
 import cg.applcation.systemedesurveillance.authentification.LoginActivity;
 
@@ -37,8 +38,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout;
     private FrameLayout frameLayout;
     private NavigationView navigationView;
-    private SwitchCompat darkModeSwitch;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,6 +104,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
+            case R.id.nav_home_id:
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new MainFragment())
+                        .commit();
+                closeDrawer();
+                break;
             case R.id.nav_add_account_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddUserAccountFragment())
                         .commit();
@@ -128,36 +132,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 deSelectCheckedState();
                 closeDrawer();
                 break;
-            case R.id.nav_display_student_id:
+            /***case R.id.nav_display_student_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplayStudentFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
-                break;
+                break;***/
             case R.id.nav_add_classroom_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddClassroomFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
-            case R.id.nav_display_classroom_id:
+            /**case R.id.nav_display_classroom_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplayClassroomFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
-                break;
+                break;***/
             case R.id.nav_add_subject_id:_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddSubjectFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
-            case R.id.nav_display_subject_id:
+            /**case R.id.nav_display_subject_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplaySubjectFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
-                break;
+                break;**/
 
             case R.id.nav_about_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AboutFragment())

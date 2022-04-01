@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
+import androidx.appcompat.widget.Toolbar;
 import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
@@ -20,6 +20,7 @@ public class ShowPresence extends AppCompatActivity {
     String id_classes, id_teacher, id_subject, id_classroom;
     DatabaseAccess databaseAccess;
     ArrayList<Student> students;
+    private Toolbar toolbar;
 
 
     @Override
@@ -32,6 +33,8 @@ public class ShowPresence extends AppCompatActivity {
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.openForReadableDatabase();
 
+        toolbar = findViewById(R.id.toolbar_id);
+        toolbar.setTitle("Liste de Presence");
         classroom = findViewById(R.id.classroom2_txt);
         subject = findViewById(R.id.subject2_txt);
         teacher_fullName = findViewById(R.id.teacher2_txt);

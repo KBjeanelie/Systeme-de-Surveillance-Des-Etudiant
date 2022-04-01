@@ -2,6 +2,7 @@ package cg.applcation.systemedesurveillance.administrateur;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ public class AddClassroomFragment extends Fragment {
 
     EditText label_classroom;
     DatabaseAccess databaseAccess;
+    private Toolbar toolbar;
 
     public AddClassroomFragment() {
         // Required empty public constructor

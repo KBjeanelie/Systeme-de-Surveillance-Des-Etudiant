@@ -27,7 +27,7 @@
         <activity
             android:name=".enseignant.TeacherDashboard"
             android:exported="true"
-            android:label="Dashbaord"></activity>
+            android:label="Dashbaord" />
         <activity
             android:name=".authentification.LoginActivity"
             android:exported="false"
