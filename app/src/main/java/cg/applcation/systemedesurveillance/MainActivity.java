@@ -30,6 +30,7 @@ import cg.applcation.systemedesurveillance.administrateur.AddSubjectFragment;
 import cg.applcation.systemedesurveillance.administrateur.AddTeacher;
 import cg.applcation.systemedesurveillance.administrateur.AddTeacherFragment;
 import cg.applcation.systemedesurveillance.administrateur.AddUserAccount;
+import cg.applcation.systemedesurveillance.administrateur.DisplayTeacherFragment;
 import cg.applcation.systemedesurveillance.administrateur.DisplayTeachers;
 import cg.applcation.systemedesurveillance.administrateur.ProfileFragment;
 import cg.applcation.systemedesurveillance.authentification.LoginActivity;
@@ -116,6 +117,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_add_teacher_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddTeacherFragment())
+                        .commit();
+                deSelectCheckedState();
+                closeDrawer();
+                break;
+            case R.id.nav_display_teacher_id:
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplayTeacherFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();

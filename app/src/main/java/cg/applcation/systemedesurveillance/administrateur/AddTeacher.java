@@ -21,9 +21,6 @@ import cg.applcation.systemedesurveillance.models.Teacher;
 
 public class AddTeacher extends AppCompatActivity {
     EditText lastname, firstname, email,job_function, work_at, tel, address, sex;
-    ImageView ic_back;
-    TextView app_bar_title;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,60 +7,57 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.models.DatabaseAccess;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddSubjectFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class AddSubjectFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public AddSubjectFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AddSubjectFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AddSubjectFragment newInstance(String param1, String param2) {
-        AddSubjectFragment fragment = new AddSubjectFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    EditText label_subject;
+    DatabaseAccess databaseAccess;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_subject, container, false);
+        View v = inflater.inflate(R.layout.fragment_add_subject, container, false);
+
+        databaseAccess = DatabaseAccess.getInstance(getContext());
+        databaseAccess.openForWritableDatabase();
+
+        label_subject = v.findViewById(R.id.add_subject_label);
+
+        v.findViewById(R.id.btn_add).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String label = label_subject.getText().toString();
+
+                if (label.matches("")){
+                    Toast.makeText(getContext(), "Enter le nom de la Matière", Toast.LENGTH_LONG).show();
+                }else {
+
+                    boolean check = databaseAccess.addNewSubject(label);
+                    databaseAccess.closeDatabase();
+
+                    if (!check){
+                        Toast.makeText(getContext(), "Failed adding Classroom in database :(", Toast.LENGTH_LONG).show();
+                    }else {
+                        label_subject.setText("");
+                        Toast.makeText(getContext(), "Added successfully :)", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+
+        return v;
     }
 }

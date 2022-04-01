@@ -44,6 +44,8 @@
         <entry key="app/src/main/res/layout/fragment_add_subject.xml" value="0.10924750679963735" />
         <entry key="app/src/main/res/layout/fragment_add_teacher.xml" value="0.10924750679963735" />
         <entry key="app/src/main/res/layout/fragment_add_user_account.xml" value="0.10924750679963735" />
+        <entry key="app/src/main/res/layout/fragment_display_teacher.xml" value="0.10924750679963735" />
+        <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.10924750679963735" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.10924750679963735" />
         <entry key="app/src/main/res/layout/nav_header_layout.xml" value="0.21" />
         <entry key="app/src/main/res/layout/spinner_item_classroom.xml" value="0.22" />

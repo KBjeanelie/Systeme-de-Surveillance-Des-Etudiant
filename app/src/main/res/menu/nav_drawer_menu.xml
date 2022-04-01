@@ -29,7 +29,7 @@
         <menu>
             <item
                 android:id="@+id/nav_add_student_id"
-                android:title="Ajouter un Etudaint" />
+                android:title="Ajouter un Etudiant" />
             <item
                 android:id="@+id/nav_display_student_id"
                 android:title="Lister les Etudiant" />
