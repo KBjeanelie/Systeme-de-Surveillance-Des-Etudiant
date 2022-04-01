@@ -57,7 +57,7 @@ public class DisplayClassroomFragment extends Fragment {
     }
 
     private void displayData(){
-        Cursor cursor = databaseAccess.readAllDataInTableSubject();
+        Cursor cursor = databaseAccess.readAllDataInTableClassroom();
 
         if (cursor.getCount() == 0){
             Toast.makeText(getContext(), "No data found", Toast.LENGTH_LONG).show();

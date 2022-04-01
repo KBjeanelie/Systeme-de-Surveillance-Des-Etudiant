@@ -39,6 +39,7 @@
         <entry key="app/src/main/res/layout/appbar_dash.xml" value="0.2" />
         <entry key="app/src/main/res/layout/button_app.xml" value="0.25" />
         <entry key="app/src/main/res/layout/class_item.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_about.xml" value="0.10924750679963735" />
         <entry key="app/src/main/res/layout/fragment_add_classroom.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_add_student.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_add_subject.xml" value="0.10924750679963735" />

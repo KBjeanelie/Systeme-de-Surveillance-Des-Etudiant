@@ -11,6 +11,7 @@
     <color name="primary_color">#FB6536</color>
     <color name="default_color">#000000</color>
     <color name="secondary_color">#121212</color>
+    <color name="gray_txt">#4E4E4E</color>
     <color name="card_bg">#1E1A1A</color>
 
 </resources>

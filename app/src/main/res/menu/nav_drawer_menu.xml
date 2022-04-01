@@ -4,66 +4,79 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_profile_id"
-            android:title="Mon Profile" />
-        <item
-            android:id="@+id/nav_gest_id"
-            android:title="Gestion Compte" />
-    </group>
+
+    <item android:title="Gestion Compte">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_add_account_id"
+                    android:title="Ajouter un Compte" />
+
+                <item
+                    android:id="@+id/nav_display_account_id"
+                    android:title="Lister les Comptes" />
+            </group>
+        </menu>
+    </item>
 
     <item android:title="Gestion Scolaire">
         <menu>
-            <item
-                android:id="@+id/nav_add_teacher_id"
-                android:title="Ajouter un Enseignant" />
-            <item
-                android:id="@+id/nav_display_teacher_id"
-                android:title="Lister les Enseignant" />
-
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_add_teacher_id"
+                    android:title="Ajouter un Enseignant" />
+                <item
+                    android:id="@+id/nav_display_teacher_id"
+                    android:title="Lister les Enseignant" />
+            </group>
         </menu>
     </item>
 
     <item android:title="Gestion Etudiant">
         <menu>
-            <item
-                android:id="@+id/nav_add_student_id"
-                android:title="Ajouter un Etudiant" />
-            <item
-                android:id="@+id/nav_display_student_id"
-                android:title="Lister les Etudiant" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_add_student_id"
+                    android:title="Ajouter un Etudiant" />
+                <item
+                    android:id="@+id/nav_display_student_id"
+                    android:title="Lister les Etudiant" />
+            </group>
         </menu>
     </item>
 
     <item android:title="Gestion Matiere et Classe">
         <menu>
-            <item
-                android:id="@+id/nav_add_classroom_id"
-                android:title="Ajouter une Classe" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_add_classroom_id"
+                    android:title="Ajouter une Classe" />
 
-            <item
-                android:id="@+id/nav_add_subject_id"
-                android:title="Ajouter une Matière" />
+                <item
+                    android:id="@+id/nav_add_subject_id"
+                    android:title="Ajouter une Matière" />
 
-            <item
-                android:id="@+id/nav_display_classroom_id"
-                android:title="Liste des Classe" />
+                <item
+                    android:id="@+id/nav_display_classroom_id"
+                    android:title="Liste des Classe" />
 
-            <item
-                android:id="@+id/nav_display_subject_id"
-                android:title="Liste des Matière" />
+                <item
+                    android:id="@+id/nav_display_subject_id"
+                    android:title="Liste des Matière" />
+            </group>
         </menu>
     </item>
 
     <item android:title="Autre">
         <menu>
-            <item
-                android:id="@+id/nav_about_id"
-                android:title="À propos" />
-            <item
-                android:id="@+id/nav_logout_id"
-                android:title="Deconnexion" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_about_id"
+                    android:title="À propos" />
+                <item
+                    android:id="@+id/nav_logout_id"
+                    android:title="Deconnexion" />
+            </group>
         </menu>
     </item>
 

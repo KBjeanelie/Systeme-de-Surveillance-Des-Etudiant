@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -22,6 +23,7 @@ import cg.applcation.systemedesurveillance.administrateur.AddClassroomFragment;
 import cg.applcation.systemedesurveillance.administrateur.AddStudentFragment;
 import cg.applcation.systemedesurveillance.administrateur.AddSubjectFragment;
 import cg.applcation.systemedesurveillance.administrateur.AddTeacherFragment;
+import cg.applcation.systemedesurveillance.administrateur.AddUserAccountFragment;
 import cg.applcation.systemedesurveillance.administrateur.DisplayClassroomFragment;
 import cg.applcation.systemedesurveillance.administrateur.DisplayStudentFragment;
 import cg.applcation.systemedesurveillance.administrateur.DisplaySubjectFragment;
@@ -103,8 +105,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
-            case R.id.nav_profile_id:
-                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new ProfileFragment())
+            case R.id.nav_add_account_id:
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddUserAccountFragment())
                         .commit();
                 closeDrawer();
                 break;
@@ -153,6 +155,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_display_subject_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplaySubjectFragment())
                         .commit();
+                deSelectCheckedState();
+                closeDrawer();
+                break;
+
+            case R.id.nav_about_id:
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AboutFragment())
+                        .commit();
+                deSelectCheckedState();
+                closeDrawer();
+                break;
+            case R.id.nav_logout_id:
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                finish();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
