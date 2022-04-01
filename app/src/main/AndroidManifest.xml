@@ -20,16 +20,6 @@
             android:label="Liste de Presence"
             android:parentActivityName=".enseignant.TeacherDashboard" />
         <activity
-            android:name=".administrateur.AddSubject"
-            android:exported="false"
-            android:label="Ajouter une matière"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".administrateur.AddClassroom"
-            android:exported="false"
-            android:label="Ajouter une classe"
-            android:parentActivityName=".MainActivity" />
-        <activity
             android:name=".enseignant.AddAClass"
             android:exported="false"
             android:label="Ajouter un Cours"
@@ -38,26 +28,6 @@
             android:name=".enseignant.TeacherDashboard"
             android:exported="true"
             android:label="Dashbaord"></activity>
-        <activity
-            android:name=".administrateur.AddUserAccount"
-            android:exported="false"
-            android:label="Ajouter un Compte"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".administrateur.AddTeacher"
-            android:exported="false"
-            android:label="Ajouter un Enseignant"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".administrateur.DisplayTeachers"
-            android:exported="false"
-            android:label="Liste des Enseignant"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".administrateur.AddStudent"
-            android:exported="false"
-            android:label="Ajouter un Etudiant"
-            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".authentification.LoginActivity"
             android:exported="false"

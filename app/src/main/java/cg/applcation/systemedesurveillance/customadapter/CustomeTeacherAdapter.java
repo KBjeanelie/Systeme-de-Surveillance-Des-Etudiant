@@ -16,8 +16,8 @@ import cg.applcation.systemedesurveillance.models.Teacher;
 
 public class CustomeTeacherAdapter extends RecyclerView.Adapter<CustomeTeacherAdapter.MyViewHolder> {
 
-    private  Context context;
-    private  ArrayList<Teacher> teachers;
+    private final Context context;
+    private final ArrayList<Teacher> teachers;
 
     public CustomeTeacherAdapter(Context context, ArrayList<Teacher> teachers) {
         this.context = context;
@@ -51,7 +51,7 @@ public class CustomeTeacherAdapter extends RecyclerView.Adapter<CustomeTeacherAd
         return teachers.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView fullName, status;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

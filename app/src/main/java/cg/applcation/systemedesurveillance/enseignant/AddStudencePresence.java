@@ -13,9 +13,7 @@ import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.SplashScreenActivity;
-import cg.applcation.systemedesurveillance.administrateur.AddSubject;
 import cg.applcation.systemedesurveillance.models.DatabaseAccess;
-import cg.applcation.systemedesurveillance.models.Student;
 
 public class AddStudencePresence extends AppCompatActivity {
 

@@ -14,27 +14,20 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-import cg.applcation.systemedesurveillance.administrateur.AddClassroom;
 import cg.applcation.systemedesurveillance.administrateur.AddClassroomFragment;
-import cg.applcation.systemedesurveillance.administrateur.AddStudent;
 import cg.applcation.systemedesurveillance.administrateur.AddStudentFragment;
-import cg.applcation.systemedesurveillance.administrateur.AddSubject;
 import cg.applcation.systemedesurveillance.administrateur.AddSubjectFragment;
-import cg.applcation.systemedesurveillance.administrateur.AddTeacher;
 import cg.applcation.systemedesurveillance.administrateur.AddTeacherFragment;
-import cg.applcation.systemedesurveillance.administrateur.AddUserAccount;
+import cg.applcation.systemedesurveillance.administrateur.DisplayClassroomFragment;
+import cg.applcation.systemedesurveillance.administrateur.DisplayStudentFragment;
+import cg.applcation.systemedesurveillance.administrateur.DisplaySubjectFragment;
 import cg.applcation.systemedesurveillance.administrateur.DisplayTeacherFragment;
-import cg.applcation.systemedesurveillance.administrateur.DisplayTeachers;
 import cg.applcation.systemedesurveillance.administrateur.ProfileFragment;
 import cg.applcation.systemedesurveillance.authentification.LoginActivity;
-import cg.applcation.systemedesurveillance.models.UserAccount;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -133,14 +126,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 deSelectCheckedState();
                 closeDrawer();
                 break;
+            case R.id.nav_display_student_id:
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplayStudentFragment())
+                        .commit();
+                deSelectCheckedState();
+                closeDrawer();
+                break;
             case R.id.nav_add_classroom_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddClassroomFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
+            case R.id.nav_display_classroom_id:
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplayClassroomFragment())
+                        .commit();
+                deSelectCheckedState();
+                closeDrawer();
+                break;
             case R.id.nav_add_subject_id:_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddSubjectFragment())
+                        .commit();
+                deSelectCheckedState();
+                closeDrawer();
+                break;
+            case R.id.nav_display_subject_id:
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplaySubjectFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
@@ -169,32 +180,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.option_menu, menu); //your file name
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.about:
-                //your code
-                // EX : call intent if you want to swich to other activity
-                return true;
-            case R.id.logout:
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {

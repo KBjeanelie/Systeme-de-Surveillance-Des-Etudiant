@@ -44,17 +44,23 @@
         <entry key="app/src/main/res/layout/fragment_add_subject.xml" value="0.10924750679963735" />
         <entry key="app/src/main/res/layout/fragment_add_teacher.xml" value="0.10924750679963735" />
         <entry key="app/src/main/res/layout/fragment_add_user_account.xml" value="0.10924750679963735" />
+        <entry key="app/src/main/res/layout/fragment_display_classroom.xml" value="0.10924750679963735" />
+        <entry key="app/src/main/res/layout/fragment_display_student.xml" value="0.10924750679963735" />
+        <entry key="app/src/main/res/layout/fragment_display_subject.xml" value="0.21" />
         <entry key="app/src/main/res/layout/fragment_display_teacher.xml" value="0.10924750679963735" />
         <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.10924750679963735" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.10924750679963735" />
+        <entry key="app/src/main/res/layout/label_classroom_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/label_subject_item.xml" value="0.22" />
         <entry key="app/src/main/res/layout/nav_header_layout.xml" value="0.21" />
         <entry key="app/src/main/res/layout/spinner_item_classroom.xml" value="0.22" />
         <entry key="app/src/main/res/layout/spinner_item_subject.xml" value="0.2" />
         <entry key="app/src/main/res/layout/spinner_student_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/student_attendance_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/student_item.xml" value="0.21" />
         <entry key="app/src/main/res/layout/teacher_card_item.xml" value="0.25" />
         <entry key="app/src/main/res/menu/menu_app.xml" value="0.25" />
-        <entry key="app/src/main/res/menu/nav_drawer_menu.xml" value="0.5" />
+        <entry key="app/src/main/res/menu/nav_drawer_menu.xml" value="0.18" />
         <entry key="app/src/main/res/menu/option_menu.xml" value="0.13296280461735785" />
       </map>
     </option>

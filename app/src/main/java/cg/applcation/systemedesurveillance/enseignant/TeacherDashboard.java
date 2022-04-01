@@ -72,31 +72,6 @@ public class TeacherDashboard extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.option_menu, menu); //your file name
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.about:
-                //your code
-                // EX : call intent if you want to swich to other activity
-                return true;
-            case R.id.logout:
-                SplashScreenActivity.current_session.setAuth(false);
-                SplashScreenActivity.current_session.logout();
-                startActivity(new Intent(TeacherDashboard.this, LoginActivity.class));
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
 
     public static ArrayList<Classroom> getClassrooms(Context context, DatabaseAccess db){
         Cursor cursor = db.readAllDataInTableClassroom();
