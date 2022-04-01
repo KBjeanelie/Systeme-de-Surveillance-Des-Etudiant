@@ -56,20 +56,7 @@ public class DatabaseAccess {
 
         long result = database.insert("Teacher", null, contentValues);
 
-        if (result == -1){
-            return false;
-        }else {
-            return true;
-        }
-    }
-
-    public int getIdFromTableTeacher(String email){
-        if (database != null){
-            cursor = database.query("Teacher", new String[]{"id_teacher"}, "teacher_email=?",
-                    new String[]{email}, null, null, null);
-        }
-        cursor.moveToNext();
-        return cursor.getInt(0);
+        return result != -1;
     }
 
     public boolean addStudent(Student student, int id_classroom){
@@ -85,11 +72,7 @@ public class DatabaseAccess {
 
         long result = database.insert("Student", null, contentValues);
 
-        if (result == -1){
-            return false;
-        }else {
-            return true;
-        }
+        return result != -1;
     }
 
     public boolean addAccountUser(String username, String password, long teacher_id){
@@ -101,16 +84,10 @@ public class DatabaseAccess {
 
         long result = database.insert("Account", null, contentValues);
 
-        if(result == -1){
-            return false;
-        }else {
-            return true;
-        }
+        return result != -1;
     }
 
-
-    public boolean addClass(int id_teacher, int id_subject, int id_classroom, String date_of_classes)
-    {
+    public boolean addClass(int id_teacher, int id_subject, int id_classroom, String date_of_classes) {
         ContentValues contentValues = new ContentValues();
 
         contentValues.put("id_teacher", id_teacher);
@@ -119,12 +96,37 @@ public class DatabaseAccess {
         contentValues.put("date_of_classes", date_of_classes);
 
         long latestIdClasses = database.insert("Classes", null, contentValues);
-        if (latestIdClasses == -1){
-            return false;
-        }else {
-            return true;
-        }
+        return latestIdClasses != -1;
     }
+
+    public boolean addNewClassroom(String label_classroom){
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("label_classroom", label_classroom);
+        long result = database.insert("Classroom", null, contentValues);
+
+        return result != -1;
+    }
+
+    public boolean addNewSubject(String label_subject){
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("label_subject", label_subject);
+        long result = database.insert("Subject", null, contentValues);
+
+        return result != -1;
+    }
+
+    public boolean addPresence(int id_classes, int id_student){
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("id_classes", id_classes);
+        contentValues.put("id_student", id_student);
+
+        long result = database.insert("Presence", null, contentValues);
+        return result != -1;
+    }
+
 
 
     private Cursor __readAllDataInTableClassroom(){
@@ -136,16 +138,6 @@ public class DatabaseAccess {
 
         return cursor;
     }
-
-    public ArrayList<String> getAllDataInTableClassroom(){
-        cursor = __readAllDataInTableClassroom();
-        ArrayList<String> Classrooms = new ArrayList<String>();
-        while (cursor.moveToNext()){
-            Classrooms.add(cursor.getString(0));
-        }
-        return Classrooms;
-    }
-
 
     private Cursor __readAllDataInTableSubject(){
         String query = "SELECT label_subject FROM Subject;";
@@ -185,15 +177,6 @@ public class DatabaseAccess {
         }
 
         return cursor;
-    }
-
-    public ArrayList<String> getAllDataInTableSubject(){
-        cursor = __readAllDataInTableSubject();
-        ArrayList<String> Subjects = new ArrayList<String>();
-        while (cursor.moveToNext()){
-            Subjects.add(cursor.getString(0));
-        }
-        return Subjects;
     }
 
     public Cursor readAllDataInTableTeacher(){
@@ -237,6 +220,33 @@ public class DatabaseAccess {
 
 
 
+    public int getIdFromTableTeacher(String email){
+        if (database != null){
+            cursor = database.query("Teacher", new String[]{"id_teacher"}, "teacher_email=?",
+                    new String[]{email}, null, null, null);
+        }
+        cursor.moveToNext();
+        return cursor.getInt(0);
+    }
+
+    public ArrayList<String> getAllDataInTableClassroom(){
+        cursor = __readAllDataInTableClassroom();
+        ArrayList<String> Classrooms = new ArrayList<String>();
+        while (cursor.moveToNext()){
+            Classrooms.add(cursor.getString(0));
+        }
+        return Classrooms;
+    }
+
+    public ArrayList<String> getAllDataInTableSubject(){
+        cursor = __readAllDataInTableSubject();
+        ArrayList<String> Subjects = new ArrayList<String>();
+        while (cursor.moveToNext()){
+            Subjects.add(cursor.getString(0));
+        }
+        return Subjects;
+    }
+
     public int getIdFromTableClassroom(String label_classroom){
         if (database != null){
             cursor = database.query("Classroom", new String[]{"id_classroom"}, "label_classroom=?",
@@ -253,32 +263,6 @@ public class DatabaseAccess {
         }
         cursor.moveToNext();
         return cursor.getInt(0);
-    }
-
-    public boolean addNewClassroom(String label_classroom){
-        ContentValues contentValues = new ContentValues();
-
-        contentValues.put("label_classroom", label_classroom);
-        long result = database.insert("Classroom", null, contentValues);
-
-        if (result == -1){
-            return false;
-        }else {
-            return true;
-        }
-    }
-
-    public boolean addNewSubject(String label_subject){
-        ContentValues contentValues = new ContentValues();
-
-        contentValues.put("label_subject", label_subject);
-        long result = database.insert("Subject", null, contentValues);
-
-        if (result == -1){
-            return false;
-        }else {
-            return true;
-        }
     }
 
     public String getSingleLabelFromClassroom(String id_classroom)
@@ -311,17 +295,20 @@ public class DatabaseAccess {
         return cursor.getString(0) + " " + cursor.getString(1);
     }
 
-    public ArrayList<String> getStudentsFullNames(String id_classroom)
+    public ArrayList<Student> getStudentsFullNames(String id_classroom)
     {
-        String query = "SELECT student_lastname, student_firstname FROM Student WHERE id_classroom = " + id_classroom;
-        ArrayList<String> students = new ArrayList<String>();
+        String query = "SELECT * FROM Student WHERE id_classroom = " + id_classroom;
+        ArrayList<Student> students = new ArrayList<Student>();
 
         if(database != null){
             cursor = database.rawQuery(query, null);
         }
 
         while (cursor.moveToNext()){
-            students.add(cursor.getString(0) + " " + cursor.getString(1));
+            Student student = new Student(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4),
+                    cursor.getString(5), cursor.getString(6), cursor.getInt(7));
+
+            students.add(student);
         }
         return students;
     }

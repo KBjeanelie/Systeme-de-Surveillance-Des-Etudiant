@@ -217,31 +217,12 @@
             android:layout_height="1dp"
             android:background="?android:attr/listDivider" />
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_display_presence"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-                <include layout="@layout/student_attendance_item"/>
-            </LinearLayout>
-        </ScrollView>
+        </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 

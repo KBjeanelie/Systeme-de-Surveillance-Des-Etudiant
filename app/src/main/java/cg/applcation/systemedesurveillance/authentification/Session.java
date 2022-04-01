@@ -98,20 +98,7 @@ public  class Session {
     }
 
 
-    public ArrayList<Student> getAllStudentLinkByClassroom(Context context, DatabaseAccess databaseAccess, String id_classroom){
-        Cursor cursor = databaseAccess.readAllDataInTableStudent();
 
-        while (cursor.moveToNext()){
-            if (cursor.getString(6).equals(id_classroom)){
-                Student student = new Student(cursor.getString(1), cursor.getString(2), cursor.getString(3),
-                        cursor.getString(4), cursor.getString(5), cursor.getString(6));
-                student.setId_student(cursor.getInt(0));
-                students.add(student);
-            }
-        }
-        return students;
-
-    }
 
     public ArrayList<Integer> getListOfPresence(Context context, DatabaseAccess databaseAccess, int id_classes){
         Cursor cursor = databaseAccess.readAllDataInTablePresence();

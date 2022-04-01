@@ -9,6 +9,16 @@ public class Student {
     private String tel;
     private String address;
     private String sex;
+    private int id_classroom;
+
+    public Student(String lastname, String firstname, String email, String tel, String address, String sex) {
+        this.lastname = lastname;
+        this.firstname = firstname;
+        this.email = email;
+        this.tel = tel;
+        this.address = address;
+        this.sex = sex;
+    }
 
     public int getId_student() {
         return id_student;
@@ -18,13 +28,23 @@ public class Student {
         this.id_student = id_student;
     }
 
-    public Student(String lastname, String firstname, String email, String tel, String address, String sex) {
+    public Student(int id_student, String lastname, String firstname, String email, String tel, String address, String sex, int id_classroom) {
+        this.id_student = id_student;
         this.lastname = lastname;
         this.firstname = firstname;
         this.email = email;
         this.tel = tel;
         this.address = address;
         this.sex = sex;
+        this.id_classroom = id_classroom;
+    }
+
+    public int getId_classroom() {
+        return id_classroom;
+    }
+
+    public void setId_classroom(int id_classroom) {
+        this.id_classroom = id_classroom;
     }
 
     public String getLastname() {
@@ -75,4 +95,11 @@ public class Student {
     public void setSex(String sex) {
         this.sex = sex;
     }
+
+    @Override
+    public String toString() {
+        return this.lastname + " " + this.firstname;
+    }
+
+
 }

@@ -12,15 +12,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
+import cg.applcation.systemedesurveillance.models.Presence;
 import cg.applcation.systemedesurveillance.models.Student;
 
 public class CustomesShowPresenceAdapter extends RecyclerView.Adapter<CustomesShowPresenceAdapter.MyViewHolder> {
 
     private Context context;
-    private int id_classes;
     ArrayList<Student> students;
+    ArrayList<Presence> presences;
+    int id_classroom;
+    int id_classes;
 
-
+    public CustomesShowPresenceAdapter(Context context, ArrayList<Student> students, ArrayList<Presence> presence, int id_classroom, int id_classes) {
+        this.context = context;
+        this.students = students;
+        presences = presence;
+        this.id_classroom = id_classroom;
+        this.id_classes = id_classes;
+    }
 
     @NonNull
     @Override
@@ -32,7 +41,13 @@ public class CustomesShowPresenceAdapter extends RecyclerView.Adapter<CustomesSh
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+        for (int i = 0; i < presences.size(); i++) {
+            if ((presences.get(i).getId_classes() == id_classes) && (presences.get(i).getId_student() == students.get(position).getId_student())
+            &&  students.get(position).getId_classroom() == id_classroom){
+                String f = students.get(position).getLastname() + " " + students.get(position).getFirstname();
+                holder.student_fullName.setText(f);
+            }
+        }
     }
 
     /**
@@ -46,11 +61,10 @@ public class CustomesShowPresenceAdapter extends RecyclerView.Adapter<CustomesSh
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView student_fullName, presence_date;
+        TextView student_fullName;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             student_fullName = itemView.findViewById(R.id.student_fullname);
-            presence_date = itemView.findViewById(R.id.presence_date_txt);
         }
     }
 }
