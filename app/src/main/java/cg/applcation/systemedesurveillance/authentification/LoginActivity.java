@@ -64,8 +64,6 @@ public class LoginActivity extends AppCompatActivity {
                                     if (t.getId_teacher() == user.getId_teacher()){
 
                                         SplashScreenActivity.current_session = new Session(true, t, user);
-                                        SplashScreenActivity.current_session.getAllClasses(LoginActivity.this, databaseAccess);
-
                                         startActivity(new Intent(LoginActivity.this, TeacherDashboard.class));
                                         finish();
                                         break;

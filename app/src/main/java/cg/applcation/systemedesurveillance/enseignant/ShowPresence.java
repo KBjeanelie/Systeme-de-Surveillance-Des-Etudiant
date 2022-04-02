@@ -74,6 +74,10 @@ public class ShowPresence extends AppCompatActivity {
 
         databaseAccess.closeDatabase();
 
+        if (students.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Aucune présence", Toast.LENGTH_LONG).show();
+        }
+
         classroom.setText(cl);
         subject.setText(sub);
         teacher_fullName.setText(f);
@@ -121,8 +125,6 @@ public class ShowPresence extends AppCompatActivity {
                 Presence presence = new Presence(cursor.getInt(0), cursor.getInt(1));
                 presences.add(presence);
             }
-        }else {
-            Toast.makeText(getApplicationContext(), "Aucune présence", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -131,9 +133,16 @@ public class ShowPresence extends AppCompatActivity {
 
         if ( cursor!= null && cursor.getCount() >= 1){
             while (cursor.moveToNext()){
-                Student student = new Student(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3),
-                        cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getInt(7));
-                students.add(student);
+                for (int i = 0; i < presences.size(); i++) {
+                    if (presences.get(i).getId_student() == cursor.getInt(0) &&
+                        (presences.get(i).getId_classes() == Integer.parseInt(id_classes)) &&
+                            (cursor.getInt(7) == Integer.parseInt(id_classroom))
+                        ){
+                        Student student = new Student(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3),
+                                cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getInt(7));
+                        students.add(student);
+                    }
+                }
             }
         }else {
             Toast.makeText(getApplicationContext(), "Aucune présence", Toast.LENGTH_LONG).show();

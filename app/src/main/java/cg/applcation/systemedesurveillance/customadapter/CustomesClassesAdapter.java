@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,14 +23,14 @@ public class CustomesClassesAdapter extends RecyclerView.Adapter<CustomesClasses
 
     private final Context context;
     ArrayList<Classes> classes;
-    ArrayList<Classroom> classrooms;
-    ArrayList<Subject> subjects;
+    Classroom classroom;
+    Subject subject;
 
-    public CustomesClassesAdapter(Context context, ArrayList<Classes> classes, ArrayList<Classroom> classrooms, ArrayList<Subject> subjects) {
+    public CustomesClassesAdapter(Context context, ArrayList<Classes> classes, Classroom classroom, Subject subject) {
         this.context = context;
         this.classes = classes;
-        this.classrooms = classrooms;
-        this.subjects = subjects;
+        this.classroom = classroom;
+        this.subject = subject;
     }
 
     @NonNull
@@ -50,25 +49,12 @@ public class CustomesClassesAdapter extends RecyclerView.Adapter<CustomesClasses
         int id_classes = classes.get(position).getId_classes();
         String date_of_classes = classes.get(position).getDate_of_classes();
         holder.date_of_class.setText(date_of_classes);
-
-        for (int i = 0; i < classrooms.size(); i++) {
-            if (classrooms.get(i).getId_classroom() == id_classroom){
-                holder.label_classroom.setText(classrooms.get(i).getLabel_classroom());
-                break;
-            }
-        }
-
-        for (int i = 0; i < subjects.size(); i++) {
-            if (subjects.get(i).getId_subject() == id_subject){
-                holder.label_subject.setText(subjects.get(i).getLabel());
-                break;
-            }
-        }
+        // holder.label_classroom.setText(classroom.getLabel_classroom());
+        // holder.label_subject.setText(subject.getLabel());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, holder.label_subject.getText().toString() + "was clicked", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(context, ShowPresence.class);
                 intent.putExtra("id_classes", String.valueOf(id_classes));
                 intent.putExtra("id_teacher", String.valueOf(id_teacher));
@@ -76,6 +62,7 @@ public class CustomesClassesAdapter extends RecyclerView.Adapter<CustomesClasses
                 intent.putExtra("id_classroom", String.valueOf(id_classroom));
                 intent.putExtra("date_of_classes", date_of_classes);
                 context.startActivity(intent);
+
             }
         });
 

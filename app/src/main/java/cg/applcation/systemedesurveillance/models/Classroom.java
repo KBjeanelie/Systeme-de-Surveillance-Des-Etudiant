@@ -5,6 +5,8 @@ public class Classroom {
     private  long id_classroom;
     private String label_classroom;
 
+    public Classroom(){}
+
     public Classroom(long id_classroom, String label_classroom) {
         this.id_classroom = id_classroom;
         this.label_classroom = label_classroom;

@@ -20,5 +20,12 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+    <style name="Theme.SystemeDeSurveillance.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.SystemeDeSurveillance.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.SystemeDeSurveillance.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

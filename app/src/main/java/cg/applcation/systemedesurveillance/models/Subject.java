@@ -5,6 +5,8 @@ public class Subject {
     private String label;
     private long id_subject;
 
+    public Subject(){}
+
     public Subject(String label, long id_subject) {
         this.label = label;
         this.id_subject = id_subject;
@@ -18,9 +20,6 @@ public class Subject {
         this.id_subject = id_subject;
     }
 
-    public Subject(String label) {
-        this.label = label;
-    }
 
     public String getLabel() {
         return label;

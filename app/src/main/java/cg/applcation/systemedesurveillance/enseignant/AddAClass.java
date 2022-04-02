@@ -38,6 +38,8 @@ public class AddAClass extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar_id);
         toolbar.setTitle("Ajouter un Cours");
+        toolbar.inflateMenu(R.menu.nav_option_menu);
+
         spinner_classroom = findViewById(R.id.ads_id_classroom);
         spinner_subject = findViewById(R.id.ads_id_subject);
 

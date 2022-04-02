@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,13 +42,8 @@ public class CustomesShowPresenceAdapter extends RecyclerView.Adapter<CustomesSh
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        for (int i = 0; i < presences.size(); i++) {
-            if ((presences.get(i).getId_classes() == id_classes) && (presences.get(i).getId_student() == students.get(position).getId_student())
-            &&  students.get(position).getId_classroom() == id_classroom){
-                String f = students.get(position).getLastname() + " " + students.get(position).getFirstname();
-                holder.student_fullName.setText(f);
-            }
-        }
+        String f = students.get(position).getLastname() + " " + students.get(position).getFirstname();
+        holder.student_fullName.setText(f);
     }
 
     /**

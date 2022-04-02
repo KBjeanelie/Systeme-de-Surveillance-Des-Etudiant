@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cg.applcation.systemedesurveillance">
+    package="cg.applcation.systemedesurveillance" >
 
     <application
         android:allowBackup="true"
@@ -8,12 +8,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SystemeDeSurveillance">
+        android:theme="@style/Theme.SystemeDeSurveillance" >
         <activity
             android:name=".enseignant.AddStudencePresence"
+            android:exported="false"
             android:label="Ajouter une Presence"
-            android:parentActivityName=".enseignant.ShowPresence"
-            android:exported="false" />
+            android:parentActivityName=".enseignant.ShowPresence" />
         <activity
             android:name=".enseignant.ShowPresence"
             android:exported="false"
@@ -35,7 +35,7 @@
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

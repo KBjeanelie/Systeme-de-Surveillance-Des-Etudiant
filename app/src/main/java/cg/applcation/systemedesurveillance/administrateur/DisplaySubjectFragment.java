@@ -67,8 +67,7 @@ public class DisplaySubjectFragment extends Fragment {
             Toast.makeText(getContext(), "data stored :)", Toast.LENGTH_LONG).show();
 
             while (cursor.moveToNext()){
-                Subject subject = new Subject(cursor.getString(1));
-                subject.setId_subject(cursor.getInt(0));
+                Subject subject = new Subject(cursor.getString(1), cursor.getLong(0));
                 subjects.add(subject);
             }
         }

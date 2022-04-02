@@ -44,7 +44,7 @@ public class DisplayClassroomFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_display_subject, container, false);
+        View v = inflater.inflate(R.layout.fragment_display_classroom, container, false);
 
         databaseAccess = DatabaseAccess.getInstance(v.getContext());
         databaseAccess.openForReadableDatabase();

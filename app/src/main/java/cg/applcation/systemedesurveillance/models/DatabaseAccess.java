@@ -159,6 +159,16 @@ public class DatabaseAccess {
         return cursor;
     }
 
+    public Cursor readAllDataInTableClasses(int id_teacher){
+        String query = "SELECT * FROM Classes WHERE id_teacher = "+ id_teacher;
+
+        if(database != null){
+            cursor = database.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
+
     public Cursor readAllDataInTableClassroom(){
         String query = "SELECT * FROM Classroom;";
 

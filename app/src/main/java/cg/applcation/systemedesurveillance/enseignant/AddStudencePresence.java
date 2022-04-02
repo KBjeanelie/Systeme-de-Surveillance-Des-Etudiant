@@ -3,6 +3,7 @@ package cg.applcation.systemedesurveillance.enseignant;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.SplashScreenActivity;
 import cg.applcation.systemedesurveillance.models.DatabaseAccess;
+import cg.applcation.systemedesurveillance.models.Presence;
 import cg.applcation.systemedesurveillance.models.Student;
 
 public class AddStudencePresence extends AppCompatActivity {
@@ -25,6 +27,8 @@ public class AddStudencePresence extends AppCompatActivity {
     Spinner spinner;
 
     ArrayList<Student> students;
+
+    ArrayList<Presence> presences;
 
     Student get_student;
 
@@ -43,6 +47,9 @@ public class AddStudencePresence extends AppCompatActivity {
 
         databaseAccess = DatabaseAccess.getInstance(AddStudencePresence.this);
         databaseAccess.openForWritableDatabase();
+
+        presences = new ArrayList<Presence>();
+        storeDataInPresences();
 
         toolbar = findViewById(R.id.toolbar_id);
         toolbar.setTitle("Ajouter Presence");
@@ -72,19 +79,20 @@ public class AddStudencePresence extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean check = databaseAccess.addPresence(Integer.parseInt(id_classes), get_student.getId_student());
-
+                Intent intent = new Intent(AddStudencePresence.this, ShowPresence.class);
+                intent.putExtra("id_classroom", id_classroom);
+                intent.putExtra("id_classes", id_classes);
+                intent.putExtra("id_subject", id_subject);
+                intent.putExtra("id_teacher", id_teacher);
+                intent.putExtra("date_of_classes", d_cl);
+                startActivity(intent);
+                finish();
                 if (check){
-                    Intent intent = new Intent(AddStudencePresence.this, ShowPresence.class);
-                    intent.putExtra("id_classroom", id_classroom);
-                    intent.putExtra("id_classes", id_classes);
-                    intent.putExtra("id_subject", id_subject);
-                    intent.putExtra("id_teacher", id_teacher);
-                    intent.putExtra("date_of_classes", d_cl);
-                    startActivity(intent);
                     Toast.makeText(getApplicationContext(), "Added Successfully :)", Toast.LENGTH_LONG).show();
                 }else {
                     Toast.makeText(getApplicationContext(), "No database found :(", Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 
@@ -100,6 +108,16 @@ public class AddStudencePresence extends AppCompatActivity {
             id_subject = getIntent().getStringExtra("id_subject");
             id_classroom = getIntent().getStringExtra("id_classroom");
             d_cl = getIntent().getStringExtra("date_of_classes");
+        }
+    }
+
+    public void storeDataInPresences(){
+        Cursor cursor = databaseAccess.readAllDataInTablePresence();
+        if ( cursor!= null && cursor.getCount() >= 1){
+            while (cursor.moveToNext()){
+                Presence presence = new Presence(cursor.getInt(0), cursor.getInt(1));
+                presences.add(presence);
+            }
         }
     }
 }
