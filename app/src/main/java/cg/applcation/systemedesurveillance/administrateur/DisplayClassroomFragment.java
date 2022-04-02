@@ -28,8 +28,11 @@ public class DisplayClassroomFragment extends Fragment {
 
 
     DatabaseAccess databaseAccess;
+
     RecyclerView recyclerView;
+
     ArrayList<Classroom> classrooms;
+
     CustomeClassroomAdapter customeClassroomAdapter;
 
     @Override
@@ -43,9 +46,10 @@ public class DisplayClassroomFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_display_subject, container, false);
 
-        recyclerView = v.findViewById(R.id.recyclerview_display_classroom);
         databaseAccess = DatabaseAccess.getInstance(v.getContext());
         databaseAccess.openForReadableDatabase();
+
+        recyclerView = v.findViewById(R.id.recyclerview_display_classroom);
 
         classrooms = new ArrayList<Classroom>();
 

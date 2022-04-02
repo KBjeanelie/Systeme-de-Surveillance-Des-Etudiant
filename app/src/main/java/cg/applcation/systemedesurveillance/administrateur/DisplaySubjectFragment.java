@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
-import cg.applcation.systemedesurveillance.customadapter.CostumesSubjectAdapter;
+import cg.applcation.systemedesurveillance.customadapter.CustomeSubjectAdapter;
 import cg.applcation.systemedesurveillance.models.DatabaseAccess;
 import cg.applcation.systemedesurveillance.models.Subject;
 
@@ -25,7 +25,7 @@ public class DisplaySubjectFragment extends Fragment {
     DatabaseAccess databaseAccess;
     RecyclerView recyclerView;
     ArrayList<Subject> subjects;
-    CostumesSubjectAdapter costumesSubjectAdapter;
+    CustomeSubjectAdapter customeSubjectAdapter;
 
     public DisplaySubjectFragment() {
         // Required empty public constructor
@@ -51,8 +51,8 @@ public class DisplaySubjectFragment extends Fragment {
 
         displayData();
 
-        costumesSubjectAdapter = new CostumesSubjectAdapter(v.getContext(), subjects);
-        recyclerView.setAdapter(costumesSubjectAdapter);
+        customeSubjectAdapter = new CustomeSubjectAdapter(v.getContext(), subjects);
+        recyclerView.setAdapter(customeSubjectAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
 
         return v;

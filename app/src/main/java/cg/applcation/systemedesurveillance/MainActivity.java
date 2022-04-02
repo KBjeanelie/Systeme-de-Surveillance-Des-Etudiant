@@ -144,24 +144,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 deSelectCheckedState();
                 closeDrawer();
                 break;
-            /**case R.id.nav_display_classroom_id:
+            case R.id.nav_display_classroom_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplayClassroomFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
-                break;***/
+                break;
             case R.id.nav_add_subject_id:_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddSubjectFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
-            /**case R.id.nav_display_subject_id:
+            case R.id.nav_display_subject_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplaySubjectFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
-                break;**/
+                break;
 
             case R.id.nav_about_id:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AboutFragment())

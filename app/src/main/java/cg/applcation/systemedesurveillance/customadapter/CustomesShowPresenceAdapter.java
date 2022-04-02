@@ -57,7 +57,7 @@ public class CustomesShowPresenceAdapter extends RecyclerView.Adapter<CustomesSh
      */
     @Override
     public int getItemCount() {
-        return 0;
+        return students.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

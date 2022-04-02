@@ -14,27 +14,27 @@ import java.util.ArrayList;
 import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.models.Subject;
 
-public class CostumesSubjectAdapter extends RecyclerView.Adapter<CostumesSubjectAdapter.MyViewHolder> {
+public class CustomeSubjectAdapter extends RecyclerView.Adapter<CustomeSubjectAdapter.MyViewHolder> {
 
 
     private final Context context;
     private final ArrayList<Subject> subjects;
 
-    public CostumesSubjectAdapter(Context context, ArrayList<Subject> subjects) {
+    public CustomeSubjectAdapter(Context context, ArrayList<Subject> subjects) {
         this.context = context;
         this.subjects = subjects;
     }
 
     @NonNull
     @Override
-    public CostumesSubjectAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CustomeSubjectAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.label_subject_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CostumesSubjectAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CustomeSubjectAdapter.MyViewHolder holder, int position) {
         holder.label_subject.setText(subjects.get(position).getLabel());
     }
 
@@ -45,7 +45,7 @@ public class CostumesSubjectAdapter extends RecyclerView.Adapter<CostumesSubject
      */
     @Override
     public int getItemCount() {
-        return 0;
+        return subjects.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{

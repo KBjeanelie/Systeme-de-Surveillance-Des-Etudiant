@@ -46,7 +46,7 @@ public class CustomeClassroomAdapter extends RecyclerView.Adapter<CustomeClassro
      */
     @Override
     public int getItemCount() {
-        return 0;
+        return classrooms.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
