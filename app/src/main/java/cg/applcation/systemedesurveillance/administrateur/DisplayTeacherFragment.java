@@ -25,9 +25,13 @@ public class DisplayTeacherFragment extends Fragment {
 
 
     DatabaseAccess databaseAccess;
+
     RecyclerView recyclerView;
+
     ArrayList<Teacher> teachers;
+
     CustomeTeacherAdapter customeTeacherAdapter;
+
     private Toolbar toolbar;
 
     public DisplayTeacherFragment() {
@@ -53,6 +57,7 @@ public class DisplayTeacherFragment extends Fragment {
 
         teachers = new ArrayList<Teacher>();
         displayData();
+        databaseAccess.closeDatabase();
 
         customeTeacherAdapter = new CustomeTeacherAdapter(v.getContext(), teachers);
         recyclerView.setAdapter(customeTeacherAdapter);

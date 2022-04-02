@@ -24,8 +24,11 @@ import cg.applcation.systemedesurveillance.models.Teacher;
 public class DisplayStudentFragment extends Fragment {
 
     DatabaseAccess databaseAccess;
+
     RecyclerView recyclerView;
+
     ArrayList<Student> students;
+
     CustumeStudentAdapter custumeStudentAdapter;
 
     @Override
@@ -42,9 +45,11 @@ public class DisplayStudentFragment extends Fragment {
 
         recyclerView = v.findViewById(R.id.recyclerview_display_student);
         databaseAccess = DatabaseAccess.getInstance(getContext());
+        databaseAccess.openForReadableDatabase();
         students = new ArrayList<Student>();
         displayData();
         databaseAccess.closeDatabase();
+
         custumeStudentAdapter = new CustumeStudentAdapter(getContext(), students);
 
         recyclerView.setAdapter(custumeStudentAdapter);
@@ -62,8 +67,8 @@ public class DisplayStudentFragment extends Fragment {
             Toast.makeText(getContext(), "data stored :)", Toast.LENGTH_LONG).show();
 
             while (cursor.moveToNext()){
-                Student student = new Student(cursor.getString(1), cursor.getString(2), cursor.getString(3),
-                        cursor.getString(4), cursor.getString(5), cursor.getString(6));
+                Student student = new Student(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3),
+                        cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getInt(7));
                 students.add(student);
             }
         }

@@ -26,12 +26,19 @@ import cg.applcation.systemedesurveillance.models.Teacher;
 public class ShowPresence extends AppCompatActivity {
 
     TextView classroom, subject, teacher_fullName, date_of_classes;
+
     String id_classes, id_teacher, id_subject, id_classroom, d_cl;
+
     DatabaseAccess databaseAccess;
+
     ArrayList<Student> students;
+
     ArrayList<Presence> presences;
+
     private Toolbar toolbar;
+
     RecyclerView recyclerView;
+
     CustomesShowPresenceAdapter customesShowPresenceAdapter;
 
 
@@ -58,8 +65,13 @@ public class ShowPresence extends AppCompatActivity {
         String cl = databaseAccess.getSingleLabelFromClassroom(id_classroom);
         String sub = databaseAccess.getSingleLabelFromSubject(id_subject);
         String f = databaseAccess.getFullNameFromTeacher(id_teacher);
+
         presences = new ArrayList<Presence>();
-        displayData();
+        storeDataInPresences();
+
+        students =  new ArrayList<Student>();
+        storeDataInStudents();
+
         databaseAccess.closeDatabase();
 
         classroom.setText(cl);
@@ -102,18 +114,29 @@ public class ShowPresence extends AppCompatActivity {
     }
 
 
-    public void displayData(){
+    public void storeDataInPresences(){
         Cursor cursor = databaseAccess.readAllDataInTablePresence();
-
-        if (cursor.getCount() == 0){
-            Toast.makeText(getApplicationContext(), "No data found", Toast.LENGTH_LONG).show();
-        }else {
-            Toast.makeText(getApplicationContext(), String.valueOf(cursor.getCount()) + " data found", Toast.LENGTH_LONG).show();
-
+        if ( cursor!= null && cursor.getCount() >= 1){
             while (cursor.moveToNext()){
                 Presence presence = new Presence(cursor.getInt(0), cursor.getInt(1));
                 presences.add(presence);
             }
+        }else {
+            Toast.makeText(getApplicationContext(), "Aucune présence", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void storeDataInStudents(){
+        Cursor cursor = databaseAccess.readAllDataInTableStudent();
+
+        if ( cursor!= null && cursor.getCount() >= 1){
+            while (cursor.moveToNext()){
+                Student student = new Student(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3),
+                        cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getInt(7));
+                students.add(student);
+            }
+        }else {
+            Toast.makeText(getApplicationContext(), "Aucune présence", Toast.LENGTH_LONG).show();
         }
     }
 
