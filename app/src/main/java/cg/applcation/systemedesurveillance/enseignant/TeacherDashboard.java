@@ -48,7 +48,6 @@ public class TeacherDashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_dashboard);
-        SplashScreenActivity.current_session.checkSession(TeacherDashboard.this);
 
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.openForReadableDatabase();
@@ -132,13 +131,15 @@ public class TeacherDashboard extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.about:
+                startActivity(new Intent(getApplicationContext(), AboutApp.class));
                 return true;
             case R.id.profile:
-                //your code
+                startActivity(new Intent(getApplicationContext(), Profile.class));
                 return true;
             case R.id.logout:
                 SplashScreenActivity.current_session.logout();
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

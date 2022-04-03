@@ -1,11 +1,15 @@
 package cg.applcation.systemedesurveillance.enseignant;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +22,7 @@ import java.util.ArrayList;
 
 import cg.applcation.systemedesurveillance.R;
 import cg.applcation.systemedesurveillance.SplashScreenActivity;
+import cg.applcation.systemedesurveillance.authentification.LoginActivity;
 import cg.applcation.systemedesurveillance.models.DatabaseAccess;
 
 public class AddAClass extends AppCompatActivity {
@@ -34,11 +39,16 @@ public class AddAClass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_a_class);
-        SplashScreenActivity.current_session.checkSession(AddAClass.this);
+       if (!SplashScreenActivity.current_session.isAuth()){
+           SplashScreenActivity.current_session.logout();
+           startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+           finish();
+       }
 
         toolbar = findViewById(R.id.toolbar_id);
         toolbar.setTitle("Ajouter un Cours");
         toolbar.inflateMenu(R.menu.nav_option_menu);
+        setSupportActionBar(toolbar);
 
         spinner_classroom = findViewById(R.id.ads_id_classroom);
         spinner_subject = findViewById(R.id.ads_id_subject);
@@ -121,6 +131,32 @@ public class AddAClass extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.nav_option_menu, menu); //your file name
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.about:
+                startActivity(new Intent(getApplicationContext(), AboutApp.class));
+                return true;
+            case R.id.profile:
+                startActivity(new Intent(getApplicationContext(), Profile.class));
+                return true;
+            case R.id.logout:
+                SplashScreenActivity.current_session.logout();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

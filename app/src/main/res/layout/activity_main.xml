@@ -27,8 +27,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/primary_color"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:popupTheme="@style/Theme.AppCompat.Light"
                 android:elevation="4dp"/>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -49,6 +47,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:menu="@menu/nav_drawer_menu"
+        android:background="@color/gray_txt"
         app:headerLayout="@layout/nav_header_layout"/>
 
 

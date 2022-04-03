@@ -32,12 +32,6 @@ public  class Session {
         current_user = null;
     }
 
-    public void checkSession(Context context)
-    {
-        if (!isAuth){
-            context.startActivity(new Intent(context, LoginActivity.class));
-        }
-    }
 
     public boolean isAuth() {
         return isAuth;

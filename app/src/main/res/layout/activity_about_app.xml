@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/default_color"
     android:orientation="vertical"
-    tools:context=".AboutFragment">
+    tools:context=".enseignant.AboutApp">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_id"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary_color"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/Theme.AppCompat.Light"
+            android:elevation="4dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/title_about"
@@ -29,7 +46,6 @@
         android:textColor="@color/gray_txt"
         android:textSize="16sp"
         android:textAlignment="center"
-        android:layout_marginTop="160dp"
         android:fontFamily="sans-serif"
         android:textStyle="normal"/>
 
@@ -40,7 +56,6 @@
         android:textColor="@color/gray_txt"
         android:textSize="16sp"
         android:textAlignment="center"
-        android:layout_marginTop="190dp"
         android:fontFamily="sans-serif"
         android:textStyle="normal"/>
 
@@ -51,7 +66,6 @@
         android:textColor="@color/gray_txt"
         android:textSize="16sp"
         android:textAlignment="center"
-        android:layout_marginTop="220dp"
         android:fontFamily="sans-serif"
         android:textStyle="normal"/>
-</FrameLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
