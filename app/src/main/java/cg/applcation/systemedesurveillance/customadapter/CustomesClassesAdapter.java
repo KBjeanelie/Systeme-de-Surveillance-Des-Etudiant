@@ -49,9 +49,20 @@ public class CustomesClassesAdapter extends RecyclerView.Adapter<CustomesClasses
         int id_classes = classes.get(position).getId_classes();
         String date_of_classes = classes.get(position).getDate_of_classes();
         holder.date_of_class.setText(date_of_classes);
-        // holder.label_classroom.setText(classroom.getLabel_classroom());
-        // holder.label_subject.setText(subject.getLabel());
 
+        for (int i = 0; i < classrooms.size(); i++) {
+            if (classrooms.get(i).getId_classroom() == id_classroom){
+                holder.label_classroom.setText(classrooms.get(i).getLabel_classroom());
+                break;
+            }
+        }
+
+        for (int i = 0; i < subjects.size(); i++) {
+            if (subjects.get(i).getId_subject() == id_subject){
+                holder.label_subject.setText(subjects.get(i).getLabel());
+                break;
+            }
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
