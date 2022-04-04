@@ -2,6 +2,7 @@ package cg.applcation.systemedesurveillance;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,11 +15,13 @@ import cg.applcation.systemedesurveillance.enseignant.TeacherDashboard;
 import cg.applcation.systemedesurveillance.models.Teacher;
 import cg.applcation.systemedesurveillance.models.UserAccount;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashScreenActivity extends AppCompatActivity {
 
     /**  THIS IS THE DEFAULT ADMIN INFORMATION FOR LOG INTO APP  */
     public static String ADMIN_USERNAME = "admin";
     public static String ADMIN_PASSWORD = "admin";
+    public static boolean ADMIN_SESSION = false;
 
     public static Session current_session;
 

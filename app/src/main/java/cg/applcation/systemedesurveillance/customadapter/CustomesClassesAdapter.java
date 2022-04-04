@@ -23,14 +23,14 @@ public class CustomesClassesAdapter extends RecyclerView.Adapter<CustomesClasses
 
     private final Context context;
     ArrayList<Classes> classes;
-    Classroom classroom;
-    Subject subject;
+    ArrayList<Classroom> classrooms;
+    ArrayList<Subject> subjects;
 
-    public CustomesClassesAdapter(Context context, ArrayList<Classes> classes, Classroom classroom, Subject subject) {
+    public CustomesClassesAdapter(Context context, ArrayList<Classes> classes, ArrayList<Classroom> classrooms, ArrayList<Subject> subjects) {
         this.context = context;
         this.classes = classes;
-        this.classroom = classroom;
-        this.subject = subject;
+        this.classrooms = classrooms;
+        this.subjects = subjects;
     }
 
     @NonNull

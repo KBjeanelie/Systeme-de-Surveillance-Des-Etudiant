@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else{
 
                     if (username.equals(SplashScreenActivity.ADMIN_USERNAME) && password.equals(SplashScreenActivity.ADMIN_PASSWORD)){
+                        SplashScreenActivity.ADMIN_SESSION = true;
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();
                     }else {

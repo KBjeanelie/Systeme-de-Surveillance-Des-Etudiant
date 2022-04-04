@@ -41,8 +41,7 @@ public class TeacherDashboard extends AppCompatActivity {
 
     ArrayList<Classroom> classrooms;
 
-    Subject subject = new Subject();
-    Classroom classroom = new Classroom();
+    ArrayList<Subject> subjects;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,15 +60,19 @@ public class TeacherDashboard extends AppCompatActivity {
 
 
         classes = new ArrayList<Classes>();
-        storeDataInClasses((int) SplashScreenActivity.current_session.getCurrent_teacher().getId_teacher());
+        storeDataInClasses();
 
-        classroom = getClassroom();
-        subject = getSubject();
+        classrooms = new ArrayList<Classroom>();
+        storeDataClassroom();
 
-        customesClassesAdapter = new CustomesClassesAdapter(TeacherDashboard.this, classes, classroom, subject);
+        subjects = new ArrayList<Subject>();
+        storeDataSubject();
+
+        customesClassesAdapter = new CustomesClassesAdapter(TeacherDashboard.this, classes, classrooms, subjects);
 
         recyclerView.setAdapter(customesClassesAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(TeacherDashboard.this));
+
         findViewById(R.id.add_classes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,8 +83,8 @@ public class TeacherDashboard extends AppCompatActivity {
 
     }
 
-    public void storeDataInClasses(int id_teacher){
-        Cursor cursor = databaseAccess.readAllDataInTableClasses(id_teacher);
+    public void storeDataInClasses(){
+        Cursor cursor = databaseAccess.readAllDataInTableClasses();
         if ( cursor!= null && cursor.getCount() >= 1){
             while (cursor.moveToNext()){
                 Classes single_classes = new Classes(cursor.getInt(0), cursor.getInt(1),
@@ -92,32 +95,24 @@ public class TeacherDashboard extends AppCompatActivity {
         }
     }
 
-    public Subject getSubject(){
+    public void storeDataSubject(){
         Cursor cursor = databaseAccess.readAllDataInTableClassroom();
         if ( cursor!= null && cursor.getCount() >= 1){
             while (cursor.moveToNext()){
-                for (int i = 0; i < classes.size(); i++) {
-                    if (classes.get(i).getId_subject() == cursor.getLong(1)){
-                        return new Subject(cursor.getString(1), cursor.getLong(0));
-                    }
-                }
+                Subject subject = new Subject(cursor.getString(1), cursor.getLong(0));
+                subjects.add(subject);
             }
         }
-        return  null;
     }
 
-    public Classroom getClassroom(){
+    public void storeDataClassroom(){
         Cursor cursor = databaseAccess.readAllDataInTableClassroom();
         if ( cursor!= null && cursor.getCount() >= 1){
             while (cursor.moveToNext()){
-                for (int i = 0; i < classes.size(); i++) {
-                    if (classes.get(i).getId_classroom() == cursor.getLong(1)){
-                        return new Classroom(cursor.getLong(0), cursor.getString(1));
-                    }
-                }
+                Classroom classroom = new Classroom(cursor.getLong(0), cursor.getString(1));
+                classrooms.add(classroom);
             }
         }
-        return null;
     }
 
     @Override
