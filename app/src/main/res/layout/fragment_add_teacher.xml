@@ -37,9 +37,9 @@
                 android:hint="Nom"
                 android:inputType="text"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:autofillHints="name"
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/color_app_txt"/>
 
             <!-- firstname field -->
             <EditText
@@ -54,10 +54,10 @@
                 android:hint="Prénom"
                 android:inputType="text"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:drawableTint="@color/primary_color"
                 android:autofillHints="name"
-                android:textColorHint="@color/white" />
+                android:textColorHint="@color/color_app_txt" />
 
             <!-- email field -->
             <EditText
@@ -72,9 +72,9 @@
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:autofillHints="emailAddress"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/color_app_txt"
                 android:drawableTint="@color/primary_color"/>
 
             <!-- job function field -->
@@ -90,9 +90,9 @@
                 android:hint="Profession"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:autofillHints="emailAddress"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/color_app_txt"
                 android:drawableTint="@color/primary_color"/>
 
             <!-- job function field -->
@@ -108,9 +108,9 @@
                 android:hint="Lieux de Travail"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:autofillHints="emailAddress"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/color_app_txt"
                 android:drawableTint="@color/primary_color"/>
 
             <!-- phone number field -->
@@ -126,10 +126,10 @@
                 android:hint="Numéro de Téléphone"
                 android:inputType="phone"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:drawableTint="@color/primary_color"
                 android:autofillHints="phone"
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/color_app_txt"/>
 
             <!-- address field -->
             <EditText
@@ -144,9 +144,9 @@
                 android:hint="Adresse"
                 android:inputType="text"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:autofillHints="postalAddress"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/color_app_txt"
                 android:drawableTint="@color/primary_color"/>
 
             <!-- sex field -->
@@ -162,9 +162,9 @@
                 android:hint="Sexe"
                 android:inputType="text"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:autofillHints=""
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/color_app_txt"
                 android:drawableTint="@color/primary_color"/>
 
             <include layout="@layout/button_app"/>

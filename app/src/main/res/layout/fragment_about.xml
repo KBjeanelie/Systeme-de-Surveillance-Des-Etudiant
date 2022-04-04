@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="S.S.P.E"
-        android:textColor="@color/white"
+        android:textColor="@color/color_app_txt"
         android:textSize="50sp"
         android:textAlignment="center"
         android:padding="20dp"

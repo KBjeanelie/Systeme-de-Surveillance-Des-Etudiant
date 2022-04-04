@@ -11,10 +11,20 @@
         <entry key="app/src/main/res/drawable/bg_home_appbar.xml" value="0.171" />
         <entry key="app/src/main/res/drawable/bg_input.xml" value="0.171" />
         <entry key="app/src/main/res/drawable/box_shadow.xml" value="0.1355" />
+        <entry key="app/src/main/res/drawable/ic_account.xml" value="0.157" />
+        <entry key="app/src/main/res/drawable/ic_add.xml" value="0.157" />
+        <entry key="app/src/main/res/drawable/ic_add2.xml" value="0.157" />
         <entry key="app/src/main/res/drawable/ic_add_present.xml" value="0.171" />
         <entry key="app/src/main/res/drawable/ic_function.xml" value="0.1485" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.167" />
         <entry key="app/src/main/res/drawable/ic_list.xml" value="0.167" />
+        <entry key="app/src/main/res/drawable/ic_list_present.xml" value="0.157" />
+        <entry key="app/src/main/res/drawable/ic_not.xml" value="0.157" />
+        <entry key="app/src/main/res/drawable/ic_option.xml" value="0.157" />
+        <entry key="app/src/main/res/drawable/ic_person.xml" value="0.157" />
+        <entry key="app/src/main/res/drawable/ic_phone.xml" value="0.157" />
+        <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.157" />
+        <entry key="app/src/main/res/drawable/ic_view_present.xml" value="0.157" />
         <entry key="app/src/main/res/layout-v23/activity_login.xml" value="0.14447463768115942" />
         <entry key="app/src/main/res/layout-v28/activity_add_classroom.xml" value="0.12454710144927536" />
         <entry key="app/src/main/res/layout/activity_about_app.xml" value="0.33" />
@@ -26,6 +36,7 @@
         <entry key="app/src/main/res/layout/activity_add_subject.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_add_teacher.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_user_account.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_addclassroom.xml" value="0.10924750679963735" />
         <entry key="app/src/main/res/layout/activity_display_all_classes.xml" value="0.12466001813236627" />
         <entry key="app/src/main/res/layout/activity_display_students_attendance.xml" value="0.13296280461735785" />
         <entry key="app/src/main/res/layout/activity_display_teachers.xml" value="0.2" />

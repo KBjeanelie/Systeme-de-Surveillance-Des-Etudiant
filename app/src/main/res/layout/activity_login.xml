@@ -56,9 +56,9 @@
                 android:ems="10"
                 android:hint="Email ou tel"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:padding="15dp"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/color_app_txt"
                 tools:targetApi="m" />
 
             <EditText
@@ -73,10 +73,10 @@
                 android:drawablePadding="5dp"
                 android:ems="10"
                 android:hint="Mot de passe"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:inputType="textPassword"
                 android:padding="15dp"
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/color_app_txt"/>
 
 
             <Button
@@ -86,7 +86,7 @@
                 android:layout_marginTop="50dp"
                 android:background="@drawable/bg_button"
                 android:text="Login"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:layout_gravity="center_horizontal"/>
 
         </LinearLayout>

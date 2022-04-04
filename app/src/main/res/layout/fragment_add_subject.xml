@@ -38,9 +38,9 @@
                 android:hint="Libelle"
                 android:inputType="text"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:autofillHints="name"
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/color_app_txt"/>
 
             <include layout="@layout/button_app"/>
 

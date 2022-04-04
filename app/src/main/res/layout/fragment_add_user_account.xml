@@ -36,9 +36,9 @@
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:autofillHints="emailAddress"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/color_app_txt"
                 android:drawableTint="@color/primary_color"/>
 
 
@@ -55,9 +55,9 @@
                 android:hint="Mot de passe"
                 android:inputType="textPassword"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/color_app_txt"
                 android:autofillHints="password"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/color_app_txt"
                 android:drawableTint="@color/primary_color"/>
 
 
