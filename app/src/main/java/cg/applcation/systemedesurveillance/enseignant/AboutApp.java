@@ -31,7 +31,7 @@ public class AboutApp extends AppCompatActivity {
         }
 
         toolbar = findViewById(R.id.toolbar_id);
-        toolbar.setTitle("Dashboard");
+        toolbar.setTitle("À propos");
         toolbar.inflateMenu(R.menu.nav_option_menu);
         setSupportActionBar(toolbar);
     }

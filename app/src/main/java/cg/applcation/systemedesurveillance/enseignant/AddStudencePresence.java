@@ -46,7 +46,7 @@ public class AddStudencePresence extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_studence_presence);
-        if (!SplashScreenActivity.current_session.isAuth()){
+        if (!SplashScreenActivity.current_session.isAuth() && !SplashScreenActivity.ADMIN_SESSION){
             SplashScreenActivity.current_session.logout();
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             finish();

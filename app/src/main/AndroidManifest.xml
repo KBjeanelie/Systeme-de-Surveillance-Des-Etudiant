@@ -11,6 +11,8 @@
         android:theme="@style/Theme.SystemeDeSurveillance">
         <activity
             android:name=".enseignant.AboutApp"
+            android:label="À propos"
+            android:parentActivityName=".enseignant.TeacherDashboard"
             android:exported="false" />
         <activity
             android:name=".enseignant.Profile"

@@ -87,16 +87,18 @@ public class TeacherDashboard extends AppCompatActivity {
         Cursor cursor = databaseAccess.readAllDataInTableClasses();
         if ( cursor!= null && cursor.getCount() >= 1){
             while (cursor.moveToNext()){
-                Classes single_classes = new Classes(cursor.getInt(0), cursor.getInt(1),
-                        cursor.getInt(2), cursor.getInt(3), cursor.getString(4));
+                if (cursor.getInt(1) == SplashScreenActivity.current_session.getCurrent_teacher().getId_teacher()){
+                    Classes single_classes = new Classes(cursor.getInt(0), cursor.getInt(1),
+                            cursor.getInt(2), cursor.getInt(3), cursor.getString(4));
 
-                classes.add(single_classes);
+                    classes.add(single_classes);
+                }
             }
         }
     }
 
     public void storeDataSubject(){
-        Cursor cursor = databaseAccess.readAllDataInTableClassroom();
+        Cursor cursor = databaseAccess.readAllDataInTableSubject();
         if ( cursor!= null && cursor.getCount() >= 1){
             while (cursor.moveToNext()){
                 Subject subject = new Subject(cursor.getString(1), cursor.getLong(0));
@@ -133,6 +135,7 @@ public class TeacherDashboard extends AppCompatActivity {
                 return true;
             case R.id.logout:
                 SplashScreenActivity.current_session.logout();
+                SplashScreenActivity.ADMIN_SESSION = false;
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
                 return true;

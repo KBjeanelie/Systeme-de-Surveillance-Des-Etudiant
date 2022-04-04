@@ -105,58 +105,68 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.nav_home_id:
+                toolbar.setTitle(R.string.toolbar_title);
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new MainFragment())
                         .commit();
                 closeDrawer();
                 break;
             case R.id.nav_add_account_id:
+                toolbar.setTitle("Ajouter un Compte");
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddUserAccountFragment())
                         .commit();
                 closeDrawer();
                 break;
             case R.id.nav_add_teacher_id:
+                toolbar.setTitle("Ajouter un Enseignant");
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddTeacherFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
             case R.id.nav_display_teacher_id:
+                toolbar.setTitle("Liste des Enseignant");
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplayTeacherFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
             case R.id.nav_add_student_id:
+                toolbar.setTitle("Ajouter un Etudiant");
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddStudentFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
             case R.id.nav_display_student_id:
+                toolbar.setTitle("Liste des Etudiant");
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplayStudentFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
             case R.id.nav_add_classroom_id:
+                toolbar.setTitle("Ajouter une Classe");
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddClassroomFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
             case R.id.nav_display_classroom_id:
+                toolbar.setTitle("Liste des Classes");
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplayClassroomFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
             case R.id.nav_add_subject_id:_id:
+            toolbar.setTitle("Ajouter une Matière");
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AddSubjectFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
             case R.id.nav_display_subject_id:
+                toolbar.setTitle("Liste des Matières");
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new DisplaySubjectFragment())
                         .commit();
                 deSelectCheckedState();
@@ -164,12 +174,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_about_id:
+                toolbar.setTitle("À propos");
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_id, new AboutFragment())
                         .commit();
                 deSelectCheckedState();
                 closeDrawer();
                 break;
             case R.id.nav_logout_id:
+                SplashScreenActivity.ADMIN_SESSION = false;
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 finish();
                 deSelectCheckedState();

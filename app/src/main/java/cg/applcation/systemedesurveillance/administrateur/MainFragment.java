@@ -82,7 +82,7 @@ public class MainFragment extends Fragment {
     }
 
     public void getSubject(){
-        Cursor cursor = databaseAccess.readAllDataInTableClassroom();
+        Cursor cursor = databaseAccess.readAllDataInTableSubject();
         if ( cursor!= null && cursor.getCount() >= 1){
             while (cursor.moveToNext()){
                 Subject subject = new Subject(cursor.getString(1), cursor.getLong(0));
