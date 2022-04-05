@@ -86,7 +86,7 @@
                 android:layout_marginTop="50dp"
                 android:background="@drawable/bg_button"
                 android:text="Login"
-                android:textColor="@color/color_app_txt"
+                android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"/>
 
         </LinearLayout>
